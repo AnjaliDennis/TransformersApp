@@ -1,0 +1,607 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4E44553824A3E9C800FDC6CC /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E44553724A3E9C800FDC6CC /* AppDelegate.m */; };
+		4E44553B24A3E9C800FDC6CC /* SceneDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E44553A24A3E9C800FDC6CC /* SceneDelegate.m */; };
+		4E44553E24A3E9C800FDC6CC /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E44553D24A3E9C800FDC6CC /* ViewController.m */; };
+		4E44554124A3E9C800FDC6CC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E44553F24A3E9C800FDC6CC /* Main.storyboard */; };
+		4E44554424A3E9C800FDC6CC /* TransformersApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 4E44554224A3E9C800FDC6CC /* TransformersApp.xcdatamodeld */; };
+		4E44554624A3E9CA00FDC6CC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4E44554524A3E9CA00FDC6CC /* Assets.xcassets */; };
+		4E44554924A3E9CA00FDC6CC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4E44554724A3E9CA00FDC6CC /* LaunchScreen.storyboard */; };
+		4E44554C24A3E9CA00FDC6CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E44554B24A3E9CA00FDC6CC /* main.m */; };
+		4E44555624A3E9CA00FDC6CC /* TransformersAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E44555524A3E9CA00FDC6CC /* TransformersAppTests.m */; };
+		4E44556124A3E9CA00FDC6CC /* TransformersAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E44556024A3E9CA00FDC6CC /* TransformersAppUITests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4E44555224A3E9CA00FDC6CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E44552B24A3E9C800FDC6CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E44553224A3E9C800FDC6CC;
+			remoteInfo = TransformersApp;
+		};
+		4E44555D24A3E9CA00FDC6CC /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4E44552B24A3E9C800FDC6CC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4E44553224A3E9C800FDC6CC;
+			remoteInfo = TransformersApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4E44553324A3E9C800FDC6CC /* TransformersApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TransformersApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E44553624A3E9C800FDC6CC /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		4E44553724A3E9C800FDC6CC /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		4E44553924A3E9C800FDC6CC /* SceneDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SceneDelegate.h; sourceTree = "<group>"; };
+		4E44553A24A3E9C800FDC6CC /* SceneDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SceneDelegate.m; sourceTree = "<group>"; };
+		4E44553C24A3E9C800FDC6CC /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
+		4E44553D24A3E9C800FDC6CC /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		4E44554024A3E9C800FDC6CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4E44554324A3E9C800FDC6CC /* TransformersApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TransformersApp.xcdatamodel; sourceTree = "<group>"; };
+		4E44554524A3E9CA00FDC6CC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4E44554824A3E9CA00FDC6CC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4E44554A24A3E9CA00FDC6CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E44554B24A3E9CA00FDC6CC /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		4E44555124A3E9CA00FDC6CC /* TransformersAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransformersAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E44555524A3E9CA00FDC6CC /* TransformersAppTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransformersAppTests.m; sourceTree = "<group>"; };
+		4E44555724A3E9CA00FDC6CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E44555C24A3E9CA00FDC6CC /* TransformersAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransformersAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4E44556024A3E9CA00FDC6CC /* TransformersAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransformersAppUITests.m; sourceTree = "<group>"; };
+		4E44556224A3E9CA00FDC6CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4E44553024A3E9C800FDC6CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E44554E24A3E9CA00FDC6CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E44555924A3E9CA00FDC6CC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4E44552A24A3E9C800FDC6CC = {
+			isa = PBXGroup;
+			children = (
+				4E44553524A3E9C800FDC6CC /* TransformersApp */,
+				4E44555424A3E9CA00FDC6CC /* TransformersAppTests */,
+				4E44555F24A3E9CA00FDC6CC /* TransformersAppUITests */,
+				4E44553424A3E9C800FDC6CC /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		4E44553424A3E9C800FDC6CC /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4E44553324A3E9C800FDC6CC /* TransformersApp.app */,
+				4E44555124A3E9CA00FDC6CC /* TransformersAppTests.xctest */,
+				4E44555C24A3E9CA00FDC6CC /* TransformersAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4E44553524A3E9C800FDC6CC /* TransformersApp */ = {
+			isa = PBXGroup;
+			children = (
+				4E44553624A3E9C800FDC6CC /* AppDelegate.h */,
+				4E44553724A3E9C800FDC6CC /* AppDelegate.m */,
+				4E44553924A3E9C800FDC6CC /* SceneDelegate.h */,
+				4E44553A24A3E9C800FDC6CC /* SceneDelegate.m */,
+				4E44553C24A3E9C800FDC6CC /* ViewController.h */,
+				4E44553D24A3E9C800FDC6CC /* ViewController.m */,
+				4E44553F24A3E9C800FDC6CC /* Main.storyboard */,
+				4E44554524A3E9CA00FDC6CC /* Assets.xcassets */,
+				4E44554724A3E9CA00FDC6CC /* LaunchScreen.storyboard */,
+				4E44554A24A3E9CA00FDC6CC /* Info.plist */,
+				4E44554B24A3E9CA00FDC6CC /* main.m */,
+				4E44554224A3E9C800FDC6CC /* TransformersApp.xcdatamodeld */,
+			);
+			path = TransformersApp;
+			sourceTree = "<group>";
+		};
+		4E44555424A3E9CA00FDC6CC /* TransformersAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				4E44555524A3E9CA00FDC6CC /* TransformersAppTests.m */,
+				4E44555724A3E9CA00FDC6CC /* Info.plist */,
+			);
+			path = TransformersAppTests;
+			sourceTree = "<group>";
+		};
+		4E44555F24A3E9CA00FDC6CC /* TransformersAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				4E44556024A3E9CA00FDC6CC /* TransformersAppUITests.m */,
+				4E44556224A3E9CA00FDC6CC /* Info.plist */,
+			);
+			path = TransformersAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4E44553224A3E9C800FDC6CC /* TransformersApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E44556524A3E9CA00FDC6CC /* Build configuration list for PBXNativeTarget "TransformersApp" */;
+			buildPhases = (
+				4E44552F24A3E9C800FDC6CC /* Sources */,
+				4E44553024A3E9C800FDC6CC /* Frameworks */,
+				4E44553124A3E9C800FDC6CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TransformersApp;
+			productName = TransformersApp;
+			productReference = 4E44553324A3E9C800FDC6CC /* TransformersApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		4E44555024A3E9CA00FDC6CC /* TransformersAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E44556824A3E9CA00FDC6CC /* Build configuration list for PBXNativeTarget "TransformersAppTests" */;
+			buildPhases = (
+				4E44554D24A3E9CA00FDC6CC /* Sources */,
+				4E44554E24A3E9CA00FDC6CC /* Frameworks */,
+				4E44554F24A3E9CA00FDC6CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E44555324A3E9CA00FDC6CC /* PBXTargetDependency */,
+			);
+			name = TransformersAppTests;
+			productName = TransformersAppTests;
+			productReference = 4E44555124A3E9CA00FDC6CC /* TransformersAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		4E44555B24A3E9CA00FDC6CC /* TransformersAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4E44556B24A3E9CA00FDC6CC /* Build configuration list for PBXNativeTarget "TransformersAppUITests" */;
+			buildPhases = (
+				4E44555824A3E9CA00FDC6CC /* Sources */,
+				4E44555924A3E9CA00FDC6CC /* Frameworks */,
+				4E44555A24A3E9CA00FDC6CC /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4E44555E24A3E9CA00FDC6CC /* PBXTargetDependency */,
+			);
+			name = TransformersAppUITests;
+			productName = TransformersAppUITests;
+			productReference = 4E44555C24A3E9CA00FDC6CC /* TransformersAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4E44552B24A3E9C800FDC6CC /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1110;
+				ORGANIZATIONNAME = "Anjali Pragati Dennis";
+				TargetAttributes = {
+					4E44553224A3E9C800FDC6CC = {
+						CreatedOnToolsVersion = 11.1;
+					};
+					4E44555024A3E9CA00FDC6CC = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 4E44553224A3E9C800FDC6CC;
+					};
+					4E44555B24A3E9CA00FDC6CC = {
+						CreatedOnToolsVersion = 11.1;
+						TestTargetID = 4E44553224A3E9C800FDC6CC;
+					};
+				};
+			};
+			buildConfigurationList = 4E44552E24A3E9C800FDC6CC /* Build configuration list for PBXProject "TransformersApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4E44552A24A3E9C800FDC6CC;
+			productRefGroup = 4E44553424A3E9C800FDC6CC /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4E44553224A3E9C800FDC6CC /* TransformersApp */,
+				4E44555024A3E9CA00FDC6CC /* TransformersAppTests */,
+				4E44555B24A3E9CA00FDC6CC /* TransformersAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4E44553124A3E9C800FDC6CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E44554924A3E9CA00FDC6CC /* LaunchScreen.storyboard in Resources */,
+				4E44554624A3E9CA00FDC6CC /* Assets.xcassets in Resources */,
+				4E44554124A3E9C800FDC6CC /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E44554F24A3E9CA00FDC6CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E44555A24A3E9CA00FDC6CC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4E44552F24A3E9C800FDC6CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E44554C24A3E9CA00FDC6CC /* main.m in Sources */,
+				4E44553E24A3E9C800FDC6CC /* ViewController.m in Sources */,
+				4E44553824A3E9C800FDC6CC /* AppDelegate.m in Sources */,
+				4E44553B24A3E9C800FDC6CC /* SceneDelegate.m in Sources */,
+				4E44554424A3E9C800FDC6CC /* TransformersApp.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E44554D24A3E9CA00FDC6CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E44555624A3E9CA00FDC6CC /* TransformersAppTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		4E44555824A3E9CA00FDC6CC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4E44556124A3E9CA00FDC6CC /* TransformersAppUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4E44555324A3E9CA00FDC6CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E44553224A3E9C800FDC6CC /* TransformersApp */;
+			targetProxy = 4E44555224A3E9CA00FDC6CC /* PBXContainerItemProxy */;
+		};
+		4E44555E24A3E9CA00FDC6CC /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4E44553224A3E9C800FDC6CC /* TransformersApp */;
+			targetProxy = 4E44555D24A3E9CA00FDC6CC /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		4E44553F24A3E9C800FDC6CC /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E44554024A3E9C800FDC6CC /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4E44554724A3E9CA00FDC6CC /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4E44554824A3E9CA00FDC6CC /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4E44556324A3E9CA00FDC6CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		4E44556424A3E9CA00FDC6CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4E44556624A3E9CA00FDC6CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RVK6SHC3T3;
+				INFOPLIST_FILE = TransformersApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.TransformersApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4E44556724A3E9CA00FDC6CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RVK6SHC3T3;
+				INFOPLIST_FILE = TransformersApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.TransformersApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		4E44556924A3E9CA00FDC6CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RVK6SHC3T3;
+				INFOPLIST_FILE = TransformersAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.TransformersAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TransformersApp.app/TransformersApp";
+			};
+			name = Debug;
+		};
+		4E44556A24A3E9CA00FDC6CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RVK6SHC3T3;
+				INFOPLIST_FILE = TransformersAppTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.1;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.TransformersAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TransformersApp.app/TransformersApp";
+			};
+			name = Release;
+		};
+		4E44556C24A3E9CA00FDC6CC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RVK6SHC3T3;
+				INFOPLIST_FILE = TransformersAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.TransformersAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TransformersApp;
+			};
+			name = Debug;
+		};
+		4E44556D24A3E9CA00FDC6CC /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = RVK6SHC3T3;
+				INFOPLIST_FILE = TransformersAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.test.TransformersAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = TransformersApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4E44552E24A3E9C800FDC6CC /* Build configuration list for PBXProject "TransformersApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E44556324A3E9CA00FDC6CC /* Debug */,
+				4E44556424A3E9CA00FDC6CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E44556524A3E9CA00FDC6CC /* Build configuration list for PBXNativeTarget "TransformersApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E44556624A3E9CA00FDC6CC /* Debug */,
+				4E44556724A3E9CA00FDC6CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E44556824A3E9CA00FDC6CC /* Build configuration list for PBXNativeTarget "TransformersAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E44556924A3E9CA00FDC6CC /* Debug */,
+				4E44556A24A3E9CA00FDC6CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4E44556B24A3E9CA00FDC6CC /* Build configuration list for PBXNativeTarget "TransformersAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4E44556C24A3E9CA00FDC6CC /* Debug */,
+				4E44556D24A3E9CA00FDC6CC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		4E44554224A3E9C800FDC6CC /* TransformersApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				4E44554324A3E9C800FDC6CC /* TransformersApp.xcdatamodel */,
+			);
+			currentVersion = 4E44554324A3E9C800FDC6CC /* TransformersApp.xcdatamodel */;
+			path = TransformersApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 4E44552B24A3E9C800FDC6CC /* Project object */;
+}
