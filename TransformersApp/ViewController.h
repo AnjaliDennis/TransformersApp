@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "TransformerCollectionViewCell.h"
 
-@interface ViewController : UIViewController
+@interface ViewController : UIViewController <UICollectionViewDataSource>
+@property (weak, nonatomic) IBOutlet UICollectionView *autobotCollectionView;
+@property (strong, nonatomic) NSArray *nameArray;
 
 
 @end

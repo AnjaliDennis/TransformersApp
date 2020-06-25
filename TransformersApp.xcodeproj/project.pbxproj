@@ -17,6 +17,7 @@
 		4E44554C24A3E9CA00FDC6CC /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E44554B24A3E9CA00FDC6CC /* main.m */; };
 		4E44555624A3E9CA00FDC6CC /* TransformersAppTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E44555524A3E9CA00FDC6CC /* TransformersAppTests.m */; };
 		4E44556124A3E9CA00FDC6CC /* TransformersAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E44556024A3E9CA00FDC6CC /* TransformersAppUITests.m */; };
+		4E56B21124A41A12006F5F92 /* TransformerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E56B20F24A41A12006F5F92 /* TransformerCollectionViewCell.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +57,8 @@
 		4E44555C24A3E9CA00FDC6CC /* TransformersAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TransformersAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		4E44556024A3E9CA00FDC6CC /* TransformersAppUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransformersAppUITests.m; sourceTree = "<group>"; };
 		4E44556224A3E9CA00FDC6CC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4E56B20E24A41A12006F5F92 /* TransformerCollectionViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransformerCollectionViewCell.h; sourceTree = "<group>"; };
+		4E56B20F24A41A12006F5F92 /* TransformerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransformerCollectionViewCell.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +109,9 @@
 		4E44553524A3E9C800FDC6CC /* TransformersApp */ = {
 			isa = PBXGroup;
 			children = (
+				4E44557024A3ED6F00FDC6CC /* Presentation Layer */,
+				4E44556F24A3ED6100FDC6CC /* Model Layer */,
+				4E44556E24A3ED5100FDC6CC /* Network Layer */,
 				4E44553624A3E9C800FDC6CC /* AppDelegate.h */,
 				4E44553724A3E9C800FDC6CC /* AppDelegate.m */,
 				4E44553924A3E9C800FDC6CC /* SceneDelegate.h */,
@@ -138,6 +144,29 @@
 				4E44556224A3E9CA00FDC6CC /* Info.plist */,
 			);
 			path = TransformersAppUITests;
+			sourceTree = "<group>";
+		};
+		4E44556E24A3ED5100FDC6CC /* Network Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Network Layer";
+			sourceTree = "<group>";
+		};
+		4E44556F24A3ED6100FDC6CC /* Model Layer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Model Layer";
+			sourceTree = "<group>";
+		};
+		4E44557024A3ED6F00FDC6CC /* Presentation Layer */ = {
+			isa = PBXGroup;
+			children = (
+				4E56B20E24A41A12006F5F92 /* TransformerCollectionViewCell.h */,
+				4E56B20F24A41A12006F5F92 /* TransformerCollectionViewCell.m */,
+			);
+			path = "Presentation Layer";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -274,6 +303,7 @@
 				4E44553E24A3E9C800FDC6CC /* ViewController.m in Sources */,
 				4E44553824A3E9C800FDC6CC /* AppDelegate.m in Sources */,
 				4E44553B24A3E9C800FDC6CC /* SceneDelegate.m in Sources */,
+				4E56B21124A41A12006F5F92 /* TransformerCollectionViewCell.m in Sources */,
 				4E44554424A3E9C800FDC6CC /* TransformersApp.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
