@@ -33,7 +33,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="7HT-9L-0QE">
-                                <rect key="frame" x="148.5" y="45" width="78" height="34"/>
+                                <rect key="frame" x="170" y="45" width="35.5" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ot1-14-0h5" userLabel="editButton">
                                         <rect key="frame" x="0.0" y="0.0" width="35.5" height="34"/>
@@ -41,10 +41,6 @@
                                         <connections>
                                             <action selector="refreshTransformerList:" destination="KWO-dh-e80" eventType="touchUpInside" id="502-VM-nZQ"/>
                                         </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n2c-mh-Xau" userLabel="deleteButton">
-                                        <rect key="frame" x="42.5" y="0.0" width="35.5" height="34"/>
-                                        <state key="normal" image="deleteIcon"/>
                                     </button>
                                 </subviews>
                             </stackView>
@@ -87,6 +83,16 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cna-cW-ral" userLabel="Delete">
+                                                    <rect key="frame" x="294" y="71" width="55" height="30"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="Nke-on-4bD"/>
+                                                    </constraints>
+                                                    <state key="normal" title="Delete">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
                                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="red-sm-3m5" userLabel="Team Icon Image View">
                                                     <rect key="frame" x="5" y="5" width="88" height="88"/>
                                                     <constraints>
@@ -213,12 +219,22 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qzh-5B-bxI">
+                                                    <rect key="frame" x="294" y="34" width="55" height="30"/>
+                                                    <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <state key="normal" title="Edit">
+                                                        <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    </state>
+                                                </button>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="fRy-SO-voq" secondAttribute="bottom" constant="5" id="0xd-JE-3Fd"/>
                                                 <constraint firstItem="MK0-ql-IXO" firstAttribute="centerY" secondItem="red-sm-3m5" secondAttribute="centerY" id="1KE-rw-1gD"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="VPv-b4-RQ0" secondAttribute="trailing" constant="5" id="5H9-xm-ujF"/>
                                                 <constraint firstItem="VPv-b4-RQ0" firstAttribute="top" secondItem="MhT-4s-WKR" secondAttribute="top" id="5hu-x3-5BO"/>
+                                                <constraint firstItem="red-sm-3m5" firstAttribute="centerY" secondItem="Qzh-5B-bxI" secondAttribute="centerY" id="6Dd-Kc-ZVB"/>
+                                                <constraint firstItem="cna-cW-ral" firstAttribute="trailing" secondItem="Qzh-5B-bxI" secondAttribute="trailing" id="8iq-p7-eed"/>
+                                                <constraint firstItem="Qzh-5B-bxI" firstAttribute="leading" secondItem="cna-cW-ral" secondAttribute="leading" id="B0z-wg-Tug"/>
                                                 <constraint firstItem="vk9-Jg-AbT" firstAttribute="leading" secondItem="MK0-ql-IXO" secondAttribute="trailing" constant="5" id="ETx-Zw-XmZ"/>
                                                 <constraint firstItem="VPv-b4-RQ0" firstAttribute="leading" secondItem="MhT-4s-WKR" secondAttribute="trailing" constant="5" id="FV4-zq-Qkh"/>
                                                 <constraint firstItem="kdj-fp-qGU" firstAttribute="leading" secondItem="red-sm-3m5" secondAttribute="trailing" constant="5" id="HLZ-M8-nIX"/>
@@ -228,21 +244,26 @@
                                                 <constraint firstItem="vk9-Jg-AbT" firstAttribute="top" secondItem="MK0-ql-IXO" secondAttribute="top" id="LTu-xn-Nf7"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZaN-xm-rZo" secondAttribute="trailing" constant="5" id="Nkb-sA-MgR"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vk9-Jg-AbT" secondAttribute="trailing" constant="5" id="OqT-yy-jPD"/>
+                                                <constraint firstItem="cna-cW-ral" firstAttribute="top" secondItem="Qzh-5B-bxI" secondAttribute="bottom" constant="7" id="TCZ-EU-tTG"/>
                                                 <constraint firstAttribute="trailing" secondItem="fRy-SO-voq" secondAttribute="trailing" constant="5" id="Vxm-TP-0c4"/>
                                                 <constraint firstItem="MK0-ql-IXO" firstAttribute="leading" secondItem="MhT-4s-WKR" secondAttribute="leading" id="Ygr-Cf-4BL"/>
                                                 <constraint firstItem="red-sm-3m5" firstAttribute="leading" secondItem="3gR-Er-rRm" secondAttribute="leading" constant="5" id="aHQ-gD-Te9"/>
                                                 <constraint firstItem="MhT-4s-WKR" firstAttribute="bottom" secondItem="red-sm-3m5" secondAttribute="bottom" id="ddf-qJ-Hfm"/>
                                                 <constraint firstItem="kdj-fp-qGU" firstAttribute="top" secondItem="red-sm-3m5" secondAttribute="top" id="gg6-qs-LVc"/>
                                                 <constraint firstItem="MhT-4s-WKR" firstAttribute="top" secondItem="MK0-ql-IXO" secondAttribute="bottom" constant="12" id="hJ4-WG-bTT"/>
+                                                <constraint firstAttribute="trailing" secondItem="Qzh-5B-bxI" secondAttribute="trailing" constant="15" id="iCx-CE-9y8"/>
                                                 <constraint firstItem="ZaN-xm-rZo" firstAttribute="top" secondItem="red-sm-3m5" secondAttribute="top" id="jEG-po-Wyd"/>
                                                 <constraint firstItem="red-sm-3m5" firstAttribute="top" secondItem="3gR-Er-rRm" secondAttribute="top" constant="5" id="kmN-04-tkz"/>
                                                 <constraint firstItem="fRy-SO-voq" firstAttribute="leading" secondItem="3gR-Er-rRm" secondAttribute="leading" constant="5" id="lWI-rq-qPp"/>
                                                 <constraint firstItem="MhT-4s-WKR" firstAttribute="leading" secondItem="red-sm-3m5" secondAttribute="trailing" constant="5" id="n6d-DG-Vhw"/>
                                                 <constraint firstItem="ZaN-xm-rZo" firstAttribute="top" secondItem="kdj-fp-qGU" secondAttribute="top" id="rQK-R8-Fhj"/>
+                                                <constraint firstItem="cna-cW-ral" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vk9-Jg-AbT" secondAttribute="trailing" constant="20" id="teb-nn-Wcu"/>
+                                                <constraint firstItem="Qzh-5B-bxI" firstAttribute="width" secondItem="cna-cW-ral" secondAttribute="width" id="y0G-gL-vkZ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="364" height="508"/>
                                         <connections>
+                                            <outlet property="deleteTransformerButton" destination="cna-cW-ral" id="4fs-ay-XQq"/>
                                             <outlet property="nameLabel" destination="ZaN-xm-rZo" id="EkA-rr-6gB"/>
                                             <outlet property="ratingValueLabel" destination="VPv-b4-RQ0" id="i2d-Ed-56E"/>
                                             <outlet property="teamIconImagView" destination="red-sm-3m5" id="UAm-qJ-Ffr"/>
@@ -252,7 +273,7 @@
                                 </cells>
                                 <connections>
                                     <outlet property="dataSource" destination="KWO-dh-e80" id="zAr-EQ-CqT"/>
-                                    <outlet property="delegate" destination="KWO-dh-e80" id="Ysi-J2-GnR"/>
+                                    <outlet property="delegate" destination="KWO-dh-e80" id="ERD-Ex-hdl"/>
                                 </connections>
                             </collectionView>
                         </subviews>
@@ -657,7 +678,6 @@
         </scene>
     </scenes>
     <resources>
-        <image name="deleteIcon" width="35.5" height="34"/>
         <image name="editIcon" width="35.5" height="34"/>
     </resources>
 </document>

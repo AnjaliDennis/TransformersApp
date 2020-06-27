@@ -42,7 +42,9 @@
     NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
     cell.teamIconImagView.image = [UIImage imageWithData: imageData];
     cell.backgroundColor = ([transformerDataModel.team isEqualToString:@"Autobot"]) ? [UIColor colorNamed:@"AutobotColor"] : [UIColor colorNamed:@"DecepticonColor"];
-    cell.userInteractionEnabled = NO;
+    cell.deleteTransformerButton.tag = indexPath.row;
+    [cell.deleteTransformerButton addTarget:self action:@selector(collectionViewCellDeleteButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    //cell.userInteractionEnabled = NO;
     return cell;
     
 }
@@ -54,7 +56,6 @@
 - (IBAction)refreshTransformerList:(id)sender {
     TransformerNetworkAPI *transformerNetworkAPI = [TransformerNetworkAPI alloc];
     [transformerNetworkAPI getTransformerListWithCompletionHandler:^(NSDictionary * _Nonnull dataDictionary, NSError * _Nonnull error) {
-       // __block typeof(self) *safeSelf = &self;
         __typeof(self) __weak weakSelf = self;
         if (!error) {
             NSLog(@"DataDict:%@", dataDictionary);
@@ -88,6 +89,30 @@
         [self.transformerDataModelArray addObject:transformerDataModel];
     }
     [self.autobotCollectionView reloadData];
+}
+
+- (IBAction)collectionViewCellDeleteButtonPressed:(UIButton *)button{
+    NSLog(@"button tag: %d", (int)button.tag);
+    NSString *transformerId = [self.transformerDataModelArray objectAtIndex:button.tag].transformerId;
+    TransformerNetworkAPI *transformerNetworkApi = [TransformerNetworkAPI alloc];
+    [transformerNetworkApi deleteTransformer:transformerId :^(BOOL status) {
+         if (status) {
+             [self.transformerDataModelArray removeObjectAtIndex:button.tag];
+             [self.autobotCollectionView reloadData];
+             
+             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:@"Transformer has been deleted successfully" preferredStyle:UIAlertControllerStyleAlert];
+             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+             [alert addAction:defaultAction];
+             [self presentViewController:alert animated:YES completion:nil];
+         }
+         else {
+             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Failure" message:@"Failed to delete Transformer. Please Try Again"  preferredStyle:UIAlertControllerStyleAlert];
+             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+             [alert addAction:defaultAction];
+             [self presentViewController:alert animated:YES completion:nil];
+         }
+    }];
+
 }
 
 

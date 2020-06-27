@@ -96,7 +96,35 @@
         }
     }];
     [task resume];
+}
+
+- (void)deleteTransformer: (NSString *) transformerId :(void (^) (BOOL status)) completionBlock{
     
+    NSString *urlString = [@"https://transformers-api.firebaseapp.com/transformers/" stringByAppendingFormat:@"%@",transformerId];
+    NSString *jwtForHeader = [@"Bearer " stringByAppendingString:[[NSUserDefaults standardUserDefaults] stringForKey:@"jwt"]];
+    
+    NSMutableURLRequest *request = [NSMutableURLRequest new];
+    request.HTTPMethod = @"DELETE";
+    
+    [request setURL:[NSURL URLWithString:urlString]];
+    [request setValue:@"application/json" forHTTPHeaderField:@"Content-Type"];
+    [request setValue:jwtForHeader forHTTPHeaderField:@"Authorization"];
+    //[request setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+    
+    NSURLSessionConfiguration *config = [NSURLSessionConfiguration defaultSessionConfiguration];
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:config delegate:nil delegateQueue:[NSOperationQueue mainQueue]];
+    NSURLSessionDataTask *task = [session dataTaskWithRequest:request completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
+        
+        NSHTTPURLResponse *httpResponse = (NSHTTPURLResponse *) response;
+        if(httpResponse.statusCode == 204)
+        {
+            completionBlock (YES);
+        }
+        else {
+            completionBlock (NO);
+        }
+    }];
+    [task resume];
 }
 
 @end

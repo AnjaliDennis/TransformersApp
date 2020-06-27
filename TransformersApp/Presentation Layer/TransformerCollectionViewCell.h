@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *ratingValueLabel;
 @property (weak, nonatomic) IBOutlet UILabel *teamValueLabel;
 @property (weak, nonatomic) IBOutlet UIImageView *teamIconImagView;
+@property (weak, nonatomic) IBOutlet UIButton *deleteTransformerButton;
 
 @end
 
