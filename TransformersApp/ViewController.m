@@ -38,7 +38,10 @@
     cell.nameLabel.text = transformerDataModel.name;
     cell.teamValueLabel.text = transformerDataModel.team;
     cell.ratingValueLabel.text = transformerDataModel.rating;
-    cell.backgroundColor = [UIColor grayColor];
+    NSURL *imageUrl = [NSURL URLWithString:transformerDataModel.team_icon];
+    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
+    cell.teamIconImagView.image = [UIImage imageWithData: imageData];
+    cell.backgroundColor = ([transformerDataModel.team isEqualToString:@"Autobot"]) ? [UIColor colorNamed:@"AutobotColor"] : [UIColor colorNamed:@"DecepticonColor"];
     cell.userInteractionEnabled = NO;
     return cell;
     
