@@ -8,11 +8,13 @@
 
 #import <UIKit/UIKit.h>
 #import "TransformerCollectionViewCell.h"
+#import "TransformerNetworkAPI.h"
+#import "TransformerDataModel.h"
 
 @interface ViewController : UIViewController <UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *autobotCollectionView;
-@property (strong, nonatomic) NSArray *nameArray;
 
+@property (strong, nonatomic) NSMutableArray <TransformerDataModel *> *transformerDataModelArray;
 
 @end
 

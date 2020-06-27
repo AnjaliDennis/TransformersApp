@@ -19,6 +19,8 @@
 		4E44556124A3E9CA00FDC6CC /* TransformersAppUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E44556024A3E9CA00FDC6CC /* TransformersAppUITests.m */; };
 		4E56B21124A41A12006F5F92 /* TransformerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E56B20F24A41A12006F5F92 /* TransformerCollectionViewCell.m */; };
 		4EBD15F624A4F6E200E88EEF /* TransformerNetworkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD15F524A4F6E200E88EEF /* TransformerNetworkAPI.m */; };
+		4EBD15F924A55A6B00E88EEF /* CreateTransformerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD15F824A55A6B00E88EEF /* CreateTransformerViewController.m */; };
+		4EBD15FC24A571D700E88EEF /* TransformerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD15FB24A571D700E88EEF /* TransformerDataModel.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +64,10 @@
 		4E56B20F24A41A12006F5F92 /* TransformerCollectionViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransformerCollectionViewCell.m; sourceTree = "<group>"; };
 		4EBD15F424A4F6E200E88EEF /* TransformerNetworkAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransformerNetworkAPI.h; sourceTree = "<group>"; };
 		4EBD15F524A4F6E200E88EEF /* TransformerNetworkAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransformerNetworkAPI.m; sourceTree = "<group>"; };
+		4EBD15F724A55A6B00E88EEF /* CreateTransformerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateTransformerViewController.h; sourceTree = "<group>"; };
+		4EBD15F824A55A6B00E88EEF /* CreateTransformerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateTransformerViewController.m; sourceTree = "<group>"; };
+		4EBD15FA24A571D700E88EEF /* TransformerDataModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransformerDataModel.h; sourceTree = "<group>"; };
+		4EBD15FB24A571D700E88EEF /* TransformerDataModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransformerDataModel.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,6 +167,8 @@
 		4E44556F24A3ED6100FDC6CC /* Model Layer */ = {
 			isa = PBXGroup;
 			children = (
+				4EBD15FA24A571D700E88EEF /* TransformerDataModel.h */,
+				4EBD15FB24A571D700E88EEF /* TransformerDataModel.m */,
 			);
 			path = "Model Layer";
 			sourceTree = "<group>";
@@ -170,6 +178,8 @@
 			children = (
 				4E56B20E24A41A12006F5F92 /* TransformerCollectionViewCell.h */,
 				4E56B20F24A41A12006F5F92 /* TransformerCollectionViewCell.m */,
+				4EBD15F724A55A6B00E88EEF /* CreateTransformerViewController.h */,
+				4EBD15F824A55A6B00E88EEF /* CreateTransformerViewController.m */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
@@ -310,7 +320,9 @@
 				4E44553B24A3E9C800FDC6CC /* SceneDelegate.m in Sources */,
 				4E56B21124A41A12006F5F92 /* TransformerCollectionViewCell.m in Sources */,
 				4EBD15F624A4F6E200E88EEF /* TransformerNetworkAPI.m in Sources */,
+				4EBD15F924A55A6B00E88EEF /* CreateTransformerViewController.m in Sources */,
 				4E44554424A3E9C800FDC6CC /* TransformersApp.xcdatamodeld in Sources */,
+				4EBD15FC24A571D700E88EEF /* TransformerDataModel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

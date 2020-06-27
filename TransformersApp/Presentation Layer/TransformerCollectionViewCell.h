@@ -12,6 +12,9 @@ NS_ASSUME_NONNULL_BEGIN
 
 @interface TransformerCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
+@property (weak, nonatomic) IBOutlet UILabel *ratingValueLabel;
+@property (weak, nonatomic) IBOutlet UILabel *teamValueLabel;
+@property (weak, nonatomic) IBOutlet UIImageView *teamIconImagView;
 
 @end
 
