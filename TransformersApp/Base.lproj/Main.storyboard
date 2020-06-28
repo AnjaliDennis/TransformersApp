@@ -61,16 +61,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="364" height="508"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZaN-xm-rZo" userLabel="Name Value Label">
-                                                    <rect key="frame" x="153" y="5" width="45" height="20.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.5" id="Fgr-Ir-VIs"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="UC9-Wm-WHX"/>
-                                                    </constraints>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rating:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MhT-4s-WKR">
                                                     <rect key="frame" x="98" y="71.5" width="53.5" height="21.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -103,7 +93,7 @@
                                                 <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fRy-SO-voq" userLabel="Criteria Stack View">
                                                     <rect key="frame" x="5" y="99" width="354" height="404"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOL-Mg-3gx">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Strength:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oOL-Mg-3gx">
                                                             <rect key="frame" x="0.0" y="0.0" width="354" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
@@ -114,79 +104,79 @@
                                                             <color key="minimumTrackTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="thumbTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                         </slider>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intelligence" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxh-20-tSw">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Intelligence:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hxh-20-tSw">
                                                             <rect key="frame" x="0.0" y="50.5" width="354" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="RsB-CC-G3G" userLabel="Intelligence Horizontal Slider">
+                                                        <slider opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="RsB-CC-G3G" userLabel="Intelligence Horizontal Slider">
                                                             <rect key="frame" x="-2" y="71" width="358" height="31"/>
                                                             <color key="minimumTrackTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="thumbTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                         </slider>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdC-2l-bgA">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Speed:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pdC-2l-bgA">
                                                             <rect key="frame" x="0.0" y="101" width="354" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="jVc-WS-Oqd" userLabel="Speed Horizontal Slider">
+                                                        <slider opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="jVc-WS-Oqd" userLabel="Speed Horizontal Slider">
                                                             <rect key="frame" x="-2" y="121.5" width="358" height="31"/>
                                                             <color key="minimumTrackTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="thumbTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                         </slider>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endurance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhe-sA-QrL">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Endurance:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bhe-sA-QrL">
                                                             <rect key="frame" x="0.0" y="151.5" width="354" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="2AD-UG-n3U" userLabel="Endurance Horizontal Slider">
+                                                        <slider opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="2AD-UG-n3U" userLabel="Endurance Horizontal Slider">
                                                             <rect key="frame" x="-2" y="172" width="358" height="31"/>
                                                             <color key="minimumTrackTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="thumbTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                         </slider>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEw-js-0ak">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rank:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEw-js-0ak">
                                                             <rect key="frame" x="0.0" y="202" width="354" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="hWK-FY-Cxb" userLabel="Rank Horizontal Slider">
+                                                        <slider opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="hWK-FY-Cxb" userLabel="Rank Horizontal Slider">
                                                             <rect key="frame" x="-2" y="222.5" width="358" height="31"/>
                                                             <color key="minimumTrackTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="thumbTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                         </slider>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Courage" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7f-3V-0a1">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Courage:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q7f-3V-0a1">
                                                             <rect key="frame" x="0.0" y="252.5" width="354" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="1az-ip-LtZ" userLabel="Courage Horizontal Slider">
+                                                        <slider opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="1az-ip-LtZ" userLabel="Courage Horizontal Slider">
                                                             <rect key="frame" x="-2" y="273" width="358" height="31"/>
                                                             <color key="minimumTrackTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="thumbTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                         </slider>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firepower" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4J-jG-sWv">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Firepower:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H4J-jG-sWv">
                                                             <rect key="frame" x="0.0" y="303" width="354" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="68D-gd-Zdc" userLabel="Firepower Horizontal Slider">
+                                                        <slider opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="68D-gd-Zdc" userLabel="Firepower Horizontal Slider">
                                                             <rect key="frame" x="-2" y="323.5" width="358" height="31"/>
                                                             <color key="minimumTrackTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="thumbTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                         </slider>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eh-Lh-ncg">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Skill:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Eh-Lh-ncg">
                                                             <rect key="frame" x="0.0" y="353.5" width="354" height="20.5"/>
                                                             <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="3S4-h5-h1h" userLabel="Skill Horizontal Slider">
+                                                        <slider opaque="NO" tag="7" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="5" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="3S4-h5-h1h" userLabel="Skill Horizontal Slider">
                                                             <rect key="frame" x="-2" y="374" width="358" height="31"/>
                                                             <color key="minimumTrackTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
                                                             <color key="thumbTintColor" red="0.22352941179999999" green="0.26274509800000001" blue="0.2784313725" alpha="1" colorSpace="calibratedRGB"/>
@@ -195,16 +185,6 @@
                                                 </stackView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdj-fp-qGU">
                                                     <rect key="frame" x="98" y="5" width="50" height="20.5"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <nil key="textColor"/>
-                                                    <nil key="highlightedColor"/>
-                                                </label>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vk9-Jg-AbT" userLabel="Team Value Label">
-                                                    <rect key="frame" x="154" y="39" width="45" height="20.5"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="20.5" id="HHF-Qr-n8Q"/>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="45" id="VEk-mz-Khk"/>
-                                                    </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
@@ -226,6 +206,26 @@
                                                         <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     </state>
                                                 </button>
+                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="84m-vj-Cof">
+                                                    <rect key="frame" x="153" y="5" width="60" height="24"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="Enr-Gy-J2t"/>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="yMG-fR-GLB"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                                <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="RuO-Lq-Qmb">
+                                                    <rect key="frame" x="154" y="39" width="60" height="24.5"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="23z-GK-A79"/>
+                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="60" id="CcZ-c9-8qY"/>
+                                                    </constraints>
+                                                    <segments>
+                                                        <segment title="A"/>
+                                                        <segment title="D"/>
+                                                    </segments>
+                                                </segmentedControl>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstAttribute="bottom" secondItem="fRy-SO-voq" secondAttribute="bottom" constant="5" id="0xd-JE-3Fd"/>
@@ -234,40 +234,57 @@
                                                 <constraint firstItem="VPv-b4-RQ0" firstAttribute="top" secondItem="MhT-4s-WKR" secondAttribute="top" id="5hu-x3-5BO"/>
                                                 <constraint firstItem="red-sm-3m5" firstAttribute="centerY" secondItem="Qzh-5B-bxI" secondAttribute="centerY" id="6Dd-Kc-ZVB"/>
                                                 <constraint firstItem="cna-cW-ral" firstAttribute="trailing" secondItem="Qzh-5B-bxI" secondAttribute="trailing" id="8iq-p7-eed"/>
+                                                <constraint firstItem="RuO-Lq-Qmb" firstAttribute="leading" secondItem="MK0-ql-IXO" secondAttribute="trailing" constant="5" id="9xr-4V-dbw"/>
                                                 <constraint firstItem="Qzh-5B-bxI" firstAttribute="leading" secondItem="cna-cW-ral" secondAttribute="leading" id="B0z-wg-Tug"/>
-                                                <constraint firstItem="vk9-Jg-AbT" firstAttribute="leading" secondItem="MK0-ql-IXO" secondAttribute="trailing" constant="5" id="ETx-Zw-XmZ"/>
+                                                <constraint firstItem="84m-vj-Cof" firstAttribute="top" secondItem="kdj-fp-qGU" secondAttribute="top" id="CXp-tT-TLw"/>
+                                                <constraint firstItem="Qzh-5B-bxI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="RuO-Lq-Qmb" secondAttribute="trailing" constant="15" id="ENg-rv-wUa"/>
                                                 <constraint firstItem="VPv-b4-RQ0" firstAttribute="leading" secondItem="MhT-4s-WKR" secondAttribute="trailing" constant="5" id="FV4-zq-Qkh"/>
                                                 <constraint firstItem="kdj-fp-qGU" firstAttribute="leading" secondItem="red-sm-3m5" secondAttribute="trailing" constant="5" id="HLZ-M8-nIX"/>
+                                                <constraint firstItem="RuO-Lq-Qmb" firstAttribute="top" secondItem="MK0-ql-IXO" secondAttribute="top" id="Ht7-pO-mfp"/>
+                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="84m-vj-Cof" secondAttribute="trailing" constant="5" id="IH8-fI-mMx"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MK0-ql-IXO" secondAttribute="trailing" constant="5" id="IQN-US-0rF"/>
-                                                <constraint firstItem="ZaN-xm-rZo" firstAttribute="leading" secondItem="kdj-fp-qGU" secondAttribute="trailing" constant="5" id="Ii6-Ve-2yl"/>
                                                 <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="MhT-4s-WKR" secondAttribute="trailing" constant="5" id="JIO-Xk-xWr"/>
-                                                <constraint firstItem="vk9-Jg-AbT" firstAttribute="top" secondItem="MK0-ql-IXO" secondAttribute="top" id="LTu-xn-Nf7"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ZaN-xm-rZo" secondAttribute="trailing" constant="5" id="Nkb-sA-MgR"/>
-                                                <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="vk9-Jg-AbT" secondAttribute="trailing" constant="5" id="OqT-yy-jPD"/>
+                                                <constraint firstItem="RuO-Lq-Qmb" firstAttribute="height" secondItem="84m-vj-Cof" secondAttribute="height" id="JoN-zd-iqh"/>
+                                                <constraint firstItem="84m-vj-Cof" firstAttribute="leading" secondItem="kdj-fp-qGU" secondAttribute="trailing" constant="5" id="N5v-Sg-aRa"/>
                                                 <constraint firstItem="cna-cW-ral" firstAttribute="top" secondItem="Qzh-5B-bxI" secondAttribute="bottom" constant="7" id="TCZ-EU-tTG"/>
                                                 <constraint firstAttribute="trailing" secondItem="fRy-SO-voq" secondAttribute="trailing" constant="5" id="Vxm-TP-0c4"/>
+                                                <constraint firstItem="RuO-Lq-Qmb" firstAttribute="top" secondItem="84m-vj-Cof" secondAttribute="bottom" constant="10" id="XGR-o6-pAd"/>
                                                 <constraint firstItem="MK0-ql-IXO" firstAttribute="leading" secondItem="MhT-4s-WKR" secondAttribute="leading" id="Ygr-Cf-4BL"/>
                                                 <constraint firstItem="red-sm-3m5" firstAttribute="leading" secondItem="3gR-Er-rRm" secondAttribute="leading" constant="5" id="aHQ-gD-Te9"/>
                                                 <constraint firstItem="MhT-4s-WKR" firstAttribute="bottom" secondItem="red-sm-3m5" secondAttribute="bottom" id="ddf-qJ-Hfm"/>
                                                 <constraint firstItem="kdj-fp-qGU" firstAttribute="top" secondItem="red-sm-3m5" secondAttribute="top" id="gg6-qs-LVc"/>
                                                 <constraint firstItem="MhT-4s-WKR" firstAttribute="top" secondItem="MK0-ql-IXO" secondAttribute="bottom" constant="12" id="hJ4-WG-bTT"/>
                                                 <constraint firstAttribute="trailing" secondItem="Qzh-5B-bxI" secondAttribute="trailing" constant="15" id="iCx-CE-9y8"/>
-                                                <constraint firstItem="ZaN-xm-rZo" firstAttribute="top" secondItem="red-sm-3m5" secondAttribute="top" id="jEG-po-Wyd"/>
                                                 <constraint firstItem="red-sm-3m5" firstAttribute="top" secondItem="3gR-Er-rRm" secondAttribute="top" constant="5" id="kmN-04-tkz"/>
                                                 <constraint firstItem="fRy-SO-voq" firstAttribute="leading" secondItem="3gR-Er-rRm" secondAttribute="leading" constant="5" id="lWI-rq-qPp"/>
                                                 <constraint firstItem="MhT-4s-WKR" firstAttribute="leading" secondItem="red-sm-3m5" secondAttribute="trailing" constant="5" id="n6d-DG-Vhw"/>
-                                                <constraint firstItem="ZaN-xm-rZo" firstAttribute="top" secondItem="kdj-fp-qGU" secondAttribute="top" id="rQK-R8-Fhj"/>
-                                                <constraint firstItem="cna-cW-ral" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="vk9-Jg-AbT" secondAttribute="trailing" constant="20" id="teb-nn-Wcu"/>
                                                 <constraint firstItem="Qzh-5B-bxI" firstAttribute="width" secondItem="cna-cW-ral" secondAttribute="width" id="y0G-gL-vkZ"/>
                                             </constraints>
                                         </collectionViewCellContentView>
                                         <size key="customSize" width="364" height="508"/>
                                         <connections>
+                                            <outlet property="courageLabel" destination="Q7f-3V-0a1" id="zdh-oy-S1T"/>
+                                            <outlet property="courageSlider" destination="1az-ip-LtZ" id="4cC-jz-v4H"/>
                                             <outlet property="deleteTransformerButton" destination="cna-cW-ral" id="4fs-ay-XQq"/>
-                                            <outlet property="nameLabel" destination="ZaN-xm-rZo" id="EkA-rr-6gB"/>
+                                            <outlet property="editTransformerButton" destination="Qzh-5B-bxI" id="lLo-uh-Pte"/>
+                                            <outlet property="enduranceLabel" destination="Bhe-sA-QrL" id="3dD-Wn-JxD"/>
+                                            <outlet property="enduranceSlider" destination="2AD-UG-n3U" id="RP6-G1-vdp"/>
+                                            <outlet property="firepowerLabel" destination="H4J-jG-sWv" id="aFI-WU-Fsf"/>
+                                            <outlet property="firepowerSlider" destination="68D-gd-Zdc" id="v0P-bv-7cU"/>
+                                            <outlet property="intelligenceLabel" destination="hxh-20-tSw" id="LsT-Xb-Htz"/>
+                                            <outlet property="intelligenceSlider" destination="RsB-CC-G3G" id="wY6-se-BMM"/>
+                                            <outlet property="nameTextField" destination="84m-vj-Cof" id="weZ-39-QXB"/>
+                                            <outlet property="rankLabel" destination="lEw-js-0ak" id="I6n-PO-Rk8"/>
+                                            <outlet property="rankSlider" destination="hWK-FY-Cxb" id="Fi3-sb-ZP0"/>
                                             <outlet property="ratingValueLabel" destination="VPv-b4-RQ0" id="i2d-Ed-56E"/>
+                                            <outlet property="skillLabel" destination="6Eh-Lh-ncg" id="UhG-eW-DlG"/>
+                                            <outlet property="skillSlider" destination="3S4-h5-h1h" id="ucA-9P-RV1"/>
+                                            <outlet property="speedLabel" destination="pdC-2l-bgA" id="WWg-aE-3dL"/>
+                                            <outlet property="speedSlider" destination="jVc-WS-Oqd" id="Qq7-1I-YPb"/>
+                                            <outlet property="strengthLabel" destination="oOL-Mg-3gx" id="zEO-m9-xcX"/>
+                                            <outlet property="strengthSlider" destination="oHl-3u-eip" id="ixq-Fs-0ts"/>
                                             <outlet property="teamIconImagView" destination="red-sm-3m5" id="UAm-qJ-Ffr"/>
-                                            <outlet property="teamValueLabel" destination="vk9-Jg-AbT" id="cqm-dq-A3D"/>
+                                            <outlet property="teamValueSegmentedControl" destination="RuO-Lq-Qmb" id="vky-zZ-D17"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>

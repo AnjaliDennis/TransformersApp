@@ -17,6 +17,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.transformerDataModelArray = [[NSMutableArray alloc] init];
+    self.currentIndexPath = [[NSIndexPath alloc] init];
     TransformerNetworkAPI *transformerNetworkAPI = [TransformerNetworkAPI alloc];
     [transformerNetworkAPI getTokenWithCompletionHandler:^(NSError * _Nonnull error) {
         if (!error) {
@@ -35,8 +36,9 @@
     TransformerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
     TransformerDataModel *transformerDataModel = [[TransformerDataModel alloc] init];
     transformerDataModel = [self.transformerDataModelArray objectAtIndex:indexPath.row];
-    cell.nameLabel.text = transformerDataModel.name;
-    cell.teamValueLabel.text = transformerDataModel.team;
+    cell.nameTextField.text = transformerDataModel.name;
+    cell.teamValueSegmentedControl.selectedSegmentIndex = ([transformerDataModel.team isEqualToString:@"Autobot"]) ? 0 : 1;
+    
     cell.ratingValueLabel.text = transformerDataModel.rating;
     NSURL *imageUrl = [NSURL URLWithString:transformerDataModel.team_icon];
     NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
@@ -44,7 +46,31 @@
     cell.backgroundColor = ([transformerDataModel.team isEqualToString:@"Autobot"]) ? [UIColor colorNamed:@"AutobotColor"] : [UIColor colorNamed:@"DecepticonColor"];
     cell.deleteTransformerButton.tag = indexPath.row;
     [cell.deleteTransformerButton addTarget:self action:@selector(collectionViewCellDeleteButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
-    //cell.userInteractionEnabled = NO;
+    cell.editTransformerButton.tag = indexPath.row;
+    [cell.editTransformerButton addTarget:self action:@selector(collectionViewCellEditButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
+    
+    self.currentIndexPath = indexPath;
+    
+    [cell.strengthSlider addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.intelligenceSlider addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.speedSlider addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.enduranceSlider addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.rankSlider addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.courageSlider addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.firepowerSlider addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventTouchUpInside];
+    [cell.skillSlider addTarget:self action:@selector(sliderValueChange:) forControlEvents:UIControlEventTouchUpInside];
+    
+    cell.nameTextField.userInteractionEnabled = NO;
+    cell.teamValueSegmentedControl.userInteractionEnabled = NO;
+    cell.strengthSlider.userInteractionEnabled = NO;
+    cell.intelligenceSlider.userInteractionEnabled = NO;
+    cell.speedSlider.userInteractionEnabled = NO;
+    cell.enduranceSlider.userInteractionEnabled = NO;
+    cell.rankSlider.userInteractionEnabled = NO;
+    cell.courageSlider.userInteractionEnabled = NO;
+    cell.firepowerSlider.userInteractionEnabled = NO;
+    cell.skillSlider.userInteractionEnabled = NO;
+    
     return cell;
     
 }
@@ -115,6 +141,76 @@
 
 }
 
+- (IBAction)sliderValueChange:(UISlider *)sender {
+    //CollectionCell *selectedCell =(CollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
+   // TransformerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
+   // self.currentIndexPath = [NSIndexPath indexPathForRow:button.tag inSection:0];
+    TransformerCollectionViewCell *selectedCell = (TransformerCollectionViewCell *)[self.autobotCollectionView cellForItemAtIndexPath:self.currentIndexPath];
+    
+    switch (sender.tag) {
+        case 0:
+            selectedCell.strengthLabel.text = [@"Strength: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            break;
+            
+        case 1:
+            selectedCell.intelligenceLabel.text = [@"Intelligence: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            break;
+            
+        case 2:
+            selectedCell.speedLabel.text = [@"Speed: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            break;
+            
+        case 3:
+            selectedCell.enduranceLabel.text = [@"Endurance: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            break;
+            
+        case 4:
+            selectedCell.rankLabel.text = [@"Rank: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            break;
+            
+        case 5:
+            selectedCell.courageLabel.text = [@"Courage: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            break;
+            
+        case 6:
+            selectedCell.firepowerLabel.text = [@"Firepower: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            break;
+            
+        case 7:
+            selectedCell.skillLabel.text = [@"Skill: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            break;
+            
+        default:
+            break;
+    }
+    
+}
+
+- (IBAction)collectionViewCellEditButtonPressed:(UIButton *)button{
+    self.currentIndexPath = [NSIndexPath indexPathForRow:button.tag inSection:0];
+    TransformerCollectionViewCell *selectedCell = (TransformerCollectionViewCell *)[self.autobotCollectionView cellForItemAtIndexPath:self.currentIndexPath];
+    self.isCellEditing = !self.isCellEditing;
+    //if (self.isCellEditing) {
+    selectedCell.nameTextField.userInteractionEnabled = self.isCellEditing;
+    selectedCell.teamValueSegmentedControl.userInteractionEnabled = self.isCellEditing;
+    selectedCell.strengthSlider.userInteractionEnabled = self.isCellEditing;
+    selectedCell.intelligenceSlider.userInteractionEnabled = self.isCellEditing;
+    selectedCell.speedSlider.userInteractionEnabled = self.isCellEditing;
+    selectedCell.enduranceSlider.userInteractionEnabled = self.isCellEditing;
+    selectedCell.rankSlider.userInteractionEnabled = self.isCellEditing;
+    selectedCell.courageSlider.userInteractionEnabled = self.isCellEditing;
+    selectedCell.firepowerSlider.userInteractionEnabled = self.isCellEditing;
+    selectedCell.skillSlider.userInteractionEnabled = self.isCellEditing;
+    
+    //selectedCell.editTransformerButton.titleLabel.text = @"Save";
+    [selectedCell.editTransformerButton setTitle:((self.isCellEditing) ? @"Save" : @"Edit") forState:UIControlStateNormal];
+    self.autobotCollectionView.scrollEnabled = !self.isCellEditing;
+    //}
+}
+
+-(void) toggleUserInteraction {
+    
+}
 
 
 

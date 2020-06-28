@@ -15,6 +15,9 @@
 @property (weak, nonatomic) IBOutlet UICollectionView *autobotCollectionView;
 
 @property (strong, nonatomic) NSMutableArray <TransformerDataModel *> *transformerDataModelArray;
+@property (strong, nonatomic) NSIndexPath *currentIndexPath;
+@property (nonatomic) BOOL isCellEditing;
+
 
 @end
 
