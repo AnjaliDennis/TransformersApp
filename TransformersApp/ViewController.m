@@ -39,6 +39,24 @@
     cell.nameTextField.text = transformerDataModel.name;
     cell.teamValueSegmentedControl.selectedSegmentIndex = ([transformerDataModel.team isEqualToString:@"Autobot"]) ? 0 : 1;
     
+    
+    cell.strengthSlider.value = transformerDataModel.strength.intValue;
+    cell.strengthLabel.text = [@"Strength: " stringByAppendingString:transformerDataModel.strength];
+    cell.intelligenceSlider.value = transformerDataModel.intelligence.intValue;
+    cell.intelligenceLabel.text = [@"Intelligence: " stringByAppendingString:transformerDataModel.intelligence];
+    cell.speedSlider.value = transformerDataModel.speed.intValue;
+    cell.speedLabel.text = [@"Speed: " stringByAppendingString:transformerDataModel.speed];
+    cell.enduranceSlider.value = transformerDataModel.endurance.intValue;
+    cell.enduranceLabel.text = [@"Endurance: " stringByAppendingString:transformerDataModel.endurance];
+    cell.rankSlider.value = transformerDataModel.rank.intValue;
+    cell.rankLabel.text = [@"Rank: " stringByAppendingString:transformerDataModel.rank];
+    cell.courageSlider.value = transformerDataModel.courage.intValue;
+    cell.courageLabel.text = [@"Courage: " stringByAppendingString:transformerDataModel.courage];
+    cell.firepowerSlider.value = transformerDataModel.firepower.intValue;
+    cell.firepowerLabel.text = [@"Firepower: " stringByAppendingString:transformerDataModel.firepower];
+    cell.skillSlider.value = transformerDataModel.skill.intValue;
+    cell.skillLabel.text = [@"Skill: " stringByAppendingString:transformerDataModel.skill];
+    
     cell.ratingValueLabel.text = transformerDataModel.rating;
     NSURL *imageUrl = [NSURL URLWithString:transformerDataModel.team_icon];
     NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
@@ -86,7 +104,7 @@
         if (!error) {
             NSLog(@"DataDict:%@", dataDictionary);
             if ([[dataDictionary objectForKey:@"transformers"] count] != 0){
-            [weakSelf parseData:dataDictionary];
+                [weakSelf parseData:dataDictionary];
             }
         }
     }];
@@ -117,34 +135,51 @@
     [self.autobotCollectionView reloadData];
 }
 
+-(TransformerDataModel *) parseUpdatedData:(NSDictionary *) dataDictionary {
+    TransformerDataModel *transformerDataModel = [[TransformerDataModel alloc] init];
+    transformerDataModel.transformerId = [dataDictionary valueForKey:@"id"];
+    transformerDataModel.name = [dataDictionary valueForKey:@"name"];
+    transformerDataModel.strength = [dataDictionary valueForKey:@"strength"];
+    transformerDataModel.intelligence = [dataDictionary valueForKey:@"intelligence"];
+    transformerDataModel.speed = [dataDictionary valueForKey:@"speed"];
+    transformerDataModel.endurance = [dataDictionary valueForKey:@"endurance"];
+    transformerDataModel.rank = [dataDictionary valueForKey:@"rank"];
+    transformerDataModel.courage = [dataDictionary valueForKey:@"courage"];
+    transformerDataModel.firepower = [dataDictionary valueForKey:@"firepower"];
+    transformerDataModel.skill = [dataDictionary valueForKey:@"skill"];
+    transformerDataModel.team = ([[dataDictionary valueForKey:@"team"] isEqualToString:@"A"]) ? @"Autobot" : @"Decepticon";
+    transformerDataModel.team_icon = [dataDictionary valueForKey:@"team_icon"];
+    //calculate overall rating->(Strength + dataDictionary + Speed + Endurance + Firepower).
+    int overallRating = transformerDataModel.strength.intValue + transformerDataModel.intelligence.intValue + transformerDataModel.speed.intValue + transformerDataModel.endurance.intValue + transformerDataModel.firepower.intValue;
+    transformerDataModel.rating =  [NSString stringWithFormat:@"%d", overallRating];
+    return transformerDataModel;
+}
+
 - (IBAction)collectionViewCellDeleteButtonPressed:(UIButton *)button{
     NSLog(@"button tag: %d", (int)button.tag);
     NSString *transformerId = [self.transformerDataModelArray objectAtIndex:button.tag].transformerId;
     TransformerNetworkAPI *transformerNetworkApi = [TransformerNetworkAPI alloc];
     [transformerNetworkApi deleteTransformer:transformerId :^(BOOL status) {
-         if (status) {
-             [self.transformerDataModelArray removeObjectAtIndex:button.tag];
-             [self.autobotCollectionView reloadData];
-             
-             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:@"Transformer has been deleted successfully" preferredStyle:UIAlertControllerStyleAlert];
-             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-             [alert addAction:defaultAction];
-             [self presentViewController:alert animated:YES completion:nil];
-         }
-         else {
-             UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Failure" message:@"Failed to delete Transformer. Please Try Again"  preferredStyle:UIAlertControllerStyleAlert];
-             UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
-             [alert addAction:defaultAction];
-             [self presentViewController:alert animated:YES completion:nil];
-         }
+        if (status) {
+            [self.transformerDataModelArray removeObjectAtIndex:button.tag];
+            [self.autobotCollectionView reloadData];
+            
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:@"Transformer has been deleted successfully" preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
+        else {
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Failure" message:@"Failed to delete Transformer. Please Try Again"  preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+            [alert addAction:defaultAction];
+            [self presentViewController:alert animated:YES completion:nil];
+        }
     }];
-
+    
 }
 
 - (IBAction)sliderValueChange:(UISlider *)sender {
-    //CollectionCell *selectedCell =(CollectionCell*)[collectionView cellForItemAtIndexPath:indexPath];
-   // TransformerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];
-   // self.currentIndexPath = [NSIndexPath indexPathForRow:button.tag inSection:0];
     TransformerCollectionViewCell *selectedCell = (TransformerCollectionViewCell *)[self.autobotCollectionView cellForItemAtIndexPath:self.currentIndexPath];
     
     switch (sender.tag) {
@@ -189,8 +224,9 @@
 - (IBAction)collectionViewCellEditButtonPressed:(UIButton *)button{
     self.currentIndexPath = [NSIndexPath indexPathForRow:button.tag inSection:0];
     TransformerCollectionViewCell *selectedCell = (TransformerCollectionViewCell *)[self.autobotCollectionView cellForItemAtIndexPath:self.currentIndexPath];
+    
     self.isCellEditing = !self.isCellEditing;
-    //if (self.isCellEditing) {
+    
     selectedCell.nameTextField.userInteractionEnabled = self.isCellEditing;
     selectedCell.teamValueSegmentedControl.userInteractionEnabled = self.isCellEditing;
     selectedCell.strengthSlider.userInteractionEnabled = self.isCellEditing;
@@ -202,61 +238,103 @@
     selectedCell.firepowerSlider.userInteractionEnabled = self.isCellEditing;
     selectedCell.skillSlider.userInteractionEnabled = self.isCellEditing;
     
-    //selectedCell.editTransformerButton.titleLabel.text = @"Save";
     [selectedCell.editTransformerButton setTitle:((self.isCellEditing) ? @"Save" : @"Edit") forState:UIControlStateNormal];
     self.autobotCollectionView.scrollEnabled = !self.isCellEditing;
-    //}
+    
+    if(!self.isCellEditing) {
+        //changes are to be saved/updated
+        TransformerDataModel *uneditedTransformerDataModel = [[TransformerDataModel alloc] init];
+        TransformerDataModel *updatedTransformerDataModel = [[TransformerDataModel alloc] init];
+        uneditedTransformerDataModel = [self.transformerDataModelArray objectAtIndex:self.currentIndexPath.row];
+        
+        updatedTransformerDataModel.transformerId = uneditedTransformerDataModel.transformerId;
+        updatedTransformerDataModel.name = selectedCell.nameTextField.text;
+        
+        updatedTransformerDataModel.strength = [NSString stringWithFormat:@"%d",(int)selectedCell.strengthSlider.value];
+        updatedTransformerDataModel.intelligence = [NSString stringWithFormat:@"%d",(int)selectedCell.intelligenceSlider.value];
+        updatedTransformerDataModel.speed = [NSString stringWithFormat:@"%d",(int)selectedCell.speedSlider.value];
+        updatedTransformerDataModel.endurance = [NSString stringWithFormat:@"%d",(int)selectedCell.enduranceSlider.value];
+        updatedTransformerDataModel.rank = [NSString stringWithFormat:@"%d",(int)selectedCell.rankSlider.value];
+        updatedTransformerDataModel.courage = [NSString stringWithFormat:@"%d",(int)selectedCell.courageSlider.value];
+        updatedTransformerDataModel.firepower = [NSString stringWithFormat:@"%d",(int)selectedCell.firepowerSlider.value];
+        updatedTransformerDataModel.skill = [NSString stringWithFormat:@"%d",(int)selectedCell.skillSlider.value];
+        updatedTransformerDataModel.team = (selectedCell.teamValueSegmentedControl.selectedSegmentIndex == 0) ? @"A" : @"D";
+        updatedTransformerDataModel.team_icon = @"";//uneditedTransformerDataModel.team_icon;
+        int overallRating = updatedTransformerDataModel.strength.intValue + updatedTransformerDataModel.intelligence.intValue + updatedTransformerDataModel.speed.intValue + updatedTransformerDataModel.endurance.intValue + updatedTransformerDataModel.firepower.intValue;
+        selectedCell.ratingValueLabel.text = [NSString stringWithFormat:@"%d",overallRating];
+        updatedTransformerDataModel.rating = @"";//[NSString stringWithFormat:@"%d", overallRating];
+        
+        TransformerNetworkAPI *transformerNetworkApi = [TransformerNetworkAPI alloc];
+        [transformerNetworkApi updateTransformer:updatedTransformerDataModel :^(NSDictionary * _Nonnull dataDictionary, NSError * _Nonnull error) {
+            // __typeof(self) __weak weakSelf = self;
+            if (!error) {
+                NSLog(@"DataDict:%@", dataDictionary);
+                if ([dataDictionary count] != 0){
+                    TransformerDataModel *updatedResponseDataModel = [self parseUpdatedData:dataDictionary];
+                    [self.transformerDataModelArray replaceObjectAtIndex:self.currentIndexPath.row withObject:updatedResponseDataModel];
+                    [self.autobotCollectionView reloadData];
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:@"Transformer has been updated successfully" preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                    [alert addAction:defaultAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
+                else {
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Failure" message:@"Failed to update Transformer. Please Try Again"  preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                    [alert addAction:defaultAction];
+                    [self presentViewController:alert animated:YES completion:nil];
+                }
+            }
+        }];
+    }
 }
 
--(void) toggleUserInteraction {
-    
-}
 
 
 
 /*
-- (void)encodeWithCoder:(nonnull NSCoder *)coder { 
-    <#code#>
-}
-
-- (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection { 
-    <#code#>
-}
-
-- (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container { 
-    <#code#>
-}
-
-- (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize { 
-    <#code#>
-}
-
-- (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container { 
-    <#code#>
-}
-
-- (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator { 
-    <#code#>
-}
-
-- (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator { 
-    <#code#>
-}
-
-- (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator { 
-    <#code#>
-}
-
-- (void)setNeedsFocusUpdate { 
-    <#code#>
-}
-
-- (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context { 
-    <#code#>
-}
-
-- (void)updateFocusIfNeeded { 
-    <#code#>
-}
-*/
+ - (void)encodeWithCoder:(nonnull NSCoder *)coder {
+ <#code#>
+ }
+ 
+ - (void)traitCollectionDidChange:(nullable UITraitCollection *)previousTraitCollection {
+ <#code#>
+ }
+ 
+ - (void)preferredContentSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
+ <#code#>
+ }
+ 
+ - (CGSize)sizeForChildContentContainer:(nonnull id<UIContentContainer>)container withParentContainerSize:(CGSize)parentSize {
+ <#code#>
+ }
+ 
+ - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(nonnull id<UIContentContainer>)container {
+ <#code#>
+ }
+ 
+ - (void)viewWillTransitionToSize:(CGSize)size withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+ <#code#>
+ }
+ 
+ - (void)willTransitionToTraitCollection:(nonnull UITraitCollection *)newCollection withTransitionCoordinator:(nonnull id<UIViewControllerTransitionCoordinator>)coordinator {
+ <#code#>
+ }
+ 
+ - (void)didUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context withAnimationCoordinator:(nonnull UIFocusAnimationCoordinator *)coordinator {
+ <#code#>
+ }
+ 
+ - (void)setNeedsFocusUpdate {
+ <#code#>
+ }
+ 
+ - (BOOL)shouldUpdateFocusInContext:(nonnull UIFocusUpdateContext *)context {
+ <#code#>
+ }
+ 
+ - (void)updateFocusIfNeeded {
+ <#code#>
+ }
+ */
 @end

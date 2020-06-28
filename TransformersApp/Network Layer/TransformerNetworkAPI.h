@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)createTransformer: (TransformerDataModel *) transformerDataModel :(void (^) (NSDictionary *dataDictionary, NSError *error)) completionBlock;
 -(void) getTransformerListWithCompletionHandler: (void (^) (NSDictionary *dataDictionary, NSError *error)) completionBlock;
 - (void)deleteTransformer: (NSString *) transformerId :(void (^) (BOOL status)) completionBlock;
+- (void)updateTransformer: (TransformerDataModel *) transformerDataModel :(void (^) (NSDictionary *dataDictionary, NSError *error)) completionBlock;
 @property (nonatomic, strong, readonly) TransformerDataModel *transformerDataModel;
 
 @end
