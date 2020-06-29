@@ -94,7 +94,7 @@
 }
 
 - (NSInteger)collectionView:(nonnull UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section { 
-    return self.transformerDataModelArray.count; //[self.nameArray count];
+    return self.transformerDataModelArray.count;
 }
 
 - (IBAction)refreshTransformerList:(id)sender {
@@ -110,7 +110,14 @@
     }];
 }
 - (IBAction)createButtonSelected:(id)sender {
-    [self performSegueWithIdentifier:@"segueToCreateTransformerScreen" sender:self];
+    [self performSegueWithIdentifier:@"segueToCreateTransformerScreen" sender:sender];
+}
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([[segue identifier] isEqualToString:@"segueTo BattlefieldScreen"]) {
+        BattlefieldTransformerViewController *destVC = [segue destinationViewController];
+        destVC.transformerDataModelArray = self.transformerDataModelArray;
+    }
 }
 
 -(void) parseData : (NSDictionary *) dataDictionary {

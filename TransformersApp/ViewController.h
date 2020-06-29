@@ -10,6 +10,7 @@
 #import "TransformerCollectionViewCell.h"
 #import "TransformerNetworkAPI.h"
 #import "TransformerDataModel.h"
+#import "BattlefieldTransformerViewController.h"
 
 @interface ViewController : UIViewController <UICollectionViewDataSource>
 @property (weak, nonatomic) IBOutlet UICollectionView *autobotCollectionView;

@@ -21,6 +21,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *decepticonStatsLabel;
 @property (weak, nonatomic) IBOutlet UILabel *autobotResultLabel;
 @property (weak, nonatomic) IBOutlet UILabel *decepticonResultLabel;
+@property (weak, nonatomic) IBOutlet UILabel *autobotRankLabel;
+@property (weak, nonatomic) IBOutlet UILabel *decepticonRankLabel;
 
 @end
 

@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "BattlefieldTransformerTableViewCell.h"
+#import "TransformerDataModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -15,7 +16,11 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UIButton *startBattleButton;
 @property (weak, nonatomic) IBOutlet UILabel *battlefieldBannerLabel;
 
-@property (strong, nonatomic) NSArray *nameArray;
+@property (strong, nonatomic) NSMutableArray <TransformerDataModel *> *transformerDataModelArray;
+@property (strong, nonatomic) NSMutableArray <TransformerDataModel *> *sortedAutobotsDataModelArray;
+@property (strong, nonatomic) NSMutableArray <TransformerDataModel *> *sortedDecepticonsDataModelArray;
+@property (nonatomic) BOOL isSorted;
+@property (weak, nonatomic) IBOutlet UITableView *transformerBattleTableView;
 
 @end
 
