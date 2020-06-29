@@ -109,6 +109,9 @@
         }
     }];
 }
+- (IBAction)createButtonSelected:(id)sender {
+    [self performSegueWithIdentifier:@"segueToCreateTransformerScreen" sender:self];
+}
 
 -(void) parseData : (NSDictionary *) dataDictionary {
     NSArray *responseDataArray = [dataDictionary objectForKey:@"transformers"];

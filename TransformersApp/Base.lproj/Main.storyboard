@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="EzN-BG-fr6">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="djH-6X-3dc">
     <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J03-dt-b8L">
-                                <rect key="frame" x="10" y="80" width="355" height="528"/>
+                                <rect key="frame" x="10" y="124" width="355" height="533"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="BattlefieldTransformerTableViewCellReuseIdentifier" rowHeight="243" id="bOU-22-Vfx" customClass="BattlefieldTransformerTableViewCell">
@@ -151,25 +151,25 @@
                                 </connections>
                             </tableView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="AUTOBOTS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xOq-QJ-1Re">
-                                <rect key="frame" x="10" y="54" width="90" height="21"/>
+                                <rect key="frame" x="10" y="98" width="90" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="DECEPTICONS" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6S-a8-ENz">
-                                <rect key="frame" x="249" y="54" width="116" height="21"/>
+                                <rect key="frame" x="249" y="98" width="116" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Start Battle to determine the Champion" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XRD-r0-oZk">
-                                <rect key="frame" x="37.5" y="5" width="300" height="21"/>
+                                <rect key="frame" x="37.5" y="49" width="300" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cRw-ey-vhx">
-                                <rect key="frame" x="145" y="31" width="85" height="30"/>
+                                <rect key="frame" x="145" y="75" width="85" height="30"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
                                 <state key="normal" title="Start Battle">
@@ -197,6 +197,7 @@
                         <viewLayoutGuide key="safeArea" id="aA3-uc-oei"/>
                     </view>
                     <tabBarItem key="tabBarItem" title="Battlefield" id="cZN-ld-YV6" userLabel="Battlefield"/>
+                    <navigationItem key="navigationItem" id="liK-i8-c8a"/>
                     <connections>
                         <outlet property="battlefieldBannerLabel" destination="XRD-r0-oZk" id="5kP-Rk-0gb"/>
                         <outlet property="startBattleButton" destination="cRw-ey-vhx" id="m9p-er-ZfJ"/>
@@ -204,7 +205,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="JEX-5k-iFB" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="536.79999999999995" y="12.143928035982009"/>
+            <point key="canvasLocation" x="537" y="178"/>
         </scene>
         <!--ViewController-->
         <scene sceneID="HrV-9e-elQ">
@@ -215,19 +216,42 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="7HT-9L-0QE">
-                                <rect key="frame" x="170" y="45" width="35.5" height="34"/>
+                                <rect key="frame" x="54" y="45" width="267.5" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ot1-14-0h5" userLabel="editButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="35.5" height="34"/>
-                                        <state key="normal" image="editIcon"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="102.5" height="34"/>
+                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title=" Refresh" image="editIcon">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
                                         <connections>
                                             <action selector="refreshTransformerList:" destination="KWO-dh-e80" eventType="touchUpInside" id="502-VM-nZQ"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVQ-PG-8qu">
+                                        <rect key="frame" x="109.5" y="0.0" width="81" height="34"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Create New">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="createButtonSelected:" destination="KWO-dh-e80" eventType="touchUpInside" id="FVk-yh-keY"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzt-z9-g2W">
+                                        <rect key="frame" x="197.5" y="0.0" width="70" height="34"/>
+                                        <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <state key="normal" title="Battlefield">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="U6i-nB-oag" kind="show" id="Ndr-Nk-Hze"/>
                                         </connections>
                                     </button>
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nOp-uw-S4T">
-                                <rect key="frame" x="5" y="84" width="365" height="524"/>
+                                <rect key="frame" x="5" y="84" width="365" height="573"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rjd-5J-szH">
                                     <size key="itemSize" width="364" height="508"/>
@@ -237,7 +261,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TransformerCollectionViewCellReuseIdentifier" id="YZW-Ce-YQx" customClass="TransformerCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="8" width="364" height="508"/>
+                                        <rect key="frame" x="0.0" y="32.5" width="364" height="508"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3gR-Er-rRm">
                                             <rect key="frame" x="0.0" y="0.0" width="364" height="508"/>
@@ -490,7 +514,7 @@
                     <navigationItem key="navigationItem" id="jHM-1T-D7X">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="OH0-dy-E42">
                             <connections>
-                                <segue destination="DDk-8A-UDg" kind="show" id="lRI-pY-zRu"/>
+                                <segue destination="DDk-8A-UDg" kind="show" identifier="segueToCreateTransformerScreen" id="lRI-pY-zRu"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -511,7 +535,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0y-al-E7x">
-                                <rect key="frame" x="10" y="170.5" width="355" height="394"/>
+                                <rect key="frame" x="10" y="170.5" width="355" height="443"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="11" translatesAutoresizingMaskIntoConstraints="NO" id="ox2-Ki-gP7">
                                         <rect key="frame" x="0.0" y="252.5" width="91.5" height="20.5"/>
@@ -779,7 +803,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="apn-zN-9aw">
-                                <rect key="frame" x="160" y="580" width="55" height="33"/>
+                                <rect key="frame" x="160" y="629" width="55" height="33"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <state key="normal" title="Create"/>
                                 <connections>
@@ -837,24 +861,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NLy-Vb-oXV" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1516" y="-636.4317841079461"/>
-        </scene>
-        <!--Tab Bar Controller-->
-        <scene sceneID="GCq-Fi-lWe">
-            <objects>
-                <tabBarController id="EzN-BG-fr6" sceneMemberID="viewController">
-                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NVf-FP-TLI">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    </tabBar>
-                    <connections>
-                        <segue destination="djH-6X-3dc" kind="relationship" relationship="viewControllers" id="6I2-Zc-79E"/>
-                        <segue destination="U6i-nB-oag" kind="relationship" relationship="viewControllers" id="Z6T-v0-kMb"/>
-                    </connections>
-                </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="St8-HC-jkQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1322" y="-312"/>
         </scene>
         <!--Transformers-->
         <scene sceneID="AWd-bE-n6x">
