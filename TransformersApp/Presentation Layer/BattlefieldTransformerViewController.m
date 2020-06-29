@@ -136,10 +136,10 @@
     if (self.transformerDataModelArray.count != 0) {
         NSArray *sortedMainArray = [self.transformerDataModelArray sortedArrayUsingComparator:^NSComparisonResult(NSDictionary *transformer1, NSDictionary *transformer2) {
                    if ([[transformer1 valueForKey:@"rank"] integerValue] > [[transformer2 valueForKey:@"rank"] integerValue]) {
-                       return (NSComparisonResult)NSOrderedDescending;
+                       return (NSComparisonResult)NSOrderedAscending;
                    }
                    if ([[transformer1 valueForKey:@"rank"] integerValue] < [[transformer2 valueForKey:@"rank"] integerValue]) {
-                       return (NSComparisonResult)NSOrderedAscending;
+                       return (NSComparisonResult)NSOrderedDescending;
                    }
                    return (NSComparisonResult)NSOrderedSame;
                }];
@@ -157,6 +157,8 @@
 
 - (IBAction)startTransformerBattle:(id)sender {
     int totalBattles ;
+    NSString *annhilatorAutobotName = @"optimus prime";
+    NSString *annhilatorDecepticonName = @"predaking";
     if (self.sortedAutobotsDataModelArray.count >= self.sortedDecepticonsDataModelArray.count) {
         totalBattles = (int)self.sortedDecepticonsDataModelArray.count;
     }
@@ -171,6 +173,34 @@
         autobotTransformerDataModel = [self.sortedAutobotsDataModelArray objectAtIndex:i];
         decepticonTransformerDataModel = [self.sortedDecepticonsDataModelArray objectAtIndex:i];
         //rules of battle
+        BOOL isAutobotAnnhilator = ([[autobotTransformerDataModel.name lowercaseString] isEqualToString:annhilatorAutobotName] || [[autobotTransformerDataModel.name lowercaseString] isEqualToString:annhilatorDecepticonName]);
+        BOOL isDecepticonAnnhilator = ([[decepticonTransformerDataModel.name lowercaseString] isEqualToString:annhilatorAutobotName] || [[decepticonTransformerDataModel.name lowercaseString] isEqualToString:annhilatorDecepticonName]);
+        
+        if (isAutobotAnnhilator && isDecepticonAnnhilator) {
+            //opponents are a combination of optimus prime and predaking-> results in annhilation
+            [self setDataForGameOVerByAnnhilation:totalBattles];
+            break;
+        }
+        else if (isDecepticonAnnhilator) {
+            //decepticon victor
+            autobotTransformerDataModel.battleOutcome = @"Loser";
+            decepticonTransformerDataModel.battleOutcome = @"Winner";
+            [self.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:autobotTransformerDataModel];
+            [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:decepticonTransformerDataModel];
+            battleWonByDecepticons += 1;
+            continue;
+        }
+        else if (isAutobotAnnhilator) {
+            //autobot victor
+            autobotTransformerDataModel.battleOutcome = @"Winner";
+            decepticonTransformerDataModel.battleOutcome = @"Loser";
+            [self.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:autobotTransformerDataModel];
+            [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:decepticonTransformerDataModel];
+            battlesWonByAutobots += 1;
+            continue;
+        }
+        
+        
         if (autobotTransformerDataModel.courage.intValue > decepticonTransformerDataModel.courage.intValue && autobotTransformerDataModel.strength.intValue > decepticonTransformerDataModel.strength.intValue) {
             if((autobotTransformerDataModel.courage.intValue - decepticonTransformerDataModel.courage.intValue >= 4) && (autobotTransformerDataModel.strength.intValue - decepticonTransformerDataModel.strength.intValue >= 3)) {
                 autobotTransformerDataModel.battleOutcome = @"Winner";
@@ -233,18 +263,37 @@
             [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:decepticonTransformerDataModel];
             continue;
         }
-    //winner, loser, destroyed, (forfeit)
     }
     self.isBattleComplete = YES;
     self.startBattleButton.hidden = self.isBattleComplete;
-    if (battlesWonByAutobots > battleWonByDecepticons) {
-        self.battlefieldBannerLabel.text = @"Battle is won by AUTOBOTS";
+    NSLog(@"a: %d b: %d", battlesWonByAutobots, battleWonByDecepticons);
+    if (self.isGameOVerByAnnhilation) {
+        self.battlefieldBannerLabel.text = @"Game over by Annhilitation";
     }
     else {
-         self.battlefieldBannerLabel.text = @"Battle is won by DECEPTICONS";
+        if (battlesWonByAutobots > battleWonByDecepticons) {
+            self.battlefieldBannerLabel.text = @"Battle is won by AUTOBOTS";
+        }
+        else {
+            self.battlefieldBannerLabel.text = @"Battle is won by DECEPTICONS";
+        }
     }
-    //self.battlefieldBannerLabel.text = ()
     [self.transformerBattleTableView reloadData];
+}
+
+-(void) setDataForGameOVerByAnnhilation: (int)battleCount {
+    self.isGameOVerByAnnhilation = YES;
+    for (int i=0;i<battleCount;i++) {
+        TransformerDataModel *updatedAutobotDataModel = [[TransformerDataModel alloc] init];
+        updatedAutobotDataModel = [self.sortedAutobotsDataModelArray objectAtIndex:i];
+        updatedAutobotDataModel.battleOutcome = @"Destroyed";
+        [self.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:updatedAutobotDataModel];
+        
+        TransformerDataModel *updatedDecepticonDataModel = [[TransformerDataModel alloc] init];
+        updatedDecepticonDataModel = [self.sortedDecepticonsDataModelArray objectAtIndex:i];
+        updatedDecepticonDataModel.battleOutcome = @"Destroyed";
+        [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:updatedDecepticonDataModel];
+    }
 }
 
 
