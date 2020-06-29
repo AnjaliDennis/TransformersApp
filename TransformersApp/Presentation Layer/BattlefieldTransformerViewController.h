@@ -20,6 +20,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSMutableArray <TransformerDataModel *> *sortedAutobotsDataModelArray;
 @property (strong, nonatomic) NSMutableArray <TransformerDataModel *> *sortedDecepticonsDataModelArray;
 @property (nonatomic) BOOL isSorted;
+@property (nonatomic) BOOL isBattleComplete;
 @property (weak, nonatomic) IBOutlet UITableView *transformerBattleTableView;
 
 @end

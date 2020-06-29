@@ -197,6 +197,9 @@
                                 <state key="normal" title="Start Battle">
                                     <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="startTransformerBattle:" destination="U6i-nB-oag" eventType="touchUpInside" id="4Qm-7l-Z9h"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>

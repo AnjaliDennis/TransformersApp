@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (strong, nonatomic) NSString *skill;
 @property (strong, nonatomic) NSString *team;
 @property (strong, nonatomic) NSString *rating;
+@property (strong, nonatomic) NSString *battleOutcome;
 
 @property (strong,   nonatomic) NSString *team_icon;
 
