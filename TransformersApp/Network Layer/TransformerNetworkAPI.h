@@ -8,6 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import "TransformerDataModel.h"
+#import "TransformerConstants.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
@@ -18,6 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 - (void)deleteTransformer: (NSString *) transformerId :(void (^) (BOOL status)) completionBlock;
 - (void)updateTransformer: (TransformerDataModel *) transformerDataModel :(void (^) (NSDictionary *dataDictionary, NSError *error)) completionBlock;
 @property (nonatomic, strong, readonly) TransformerDataModel *transformerDataModel;
+@property (nonatomic, strong) NSURLProtectionSpace *jwtProtectionSpace;
 
 @end
 

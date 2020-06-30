@@ -63,7 +63,7 @@
         NSString *teamValue = (self.transformerTeamType.selectedSegmentIndex == 0) ? CONSTANT_TEAM_AUTOBOT_STRING : CONSTANT_TEAM_DECEPTICON_STRING;
         self.requestBodyDataModel = [[TransformerDataModel alloc] initWithTransformerId:@"" name:self.transformerNameTextField.text strength:self.strengthLabel.text intelligence:self.intelligenceLabel.text speed:self.speedLabel.text endurance:self.enduranceLabel.text rank:self.rankLabel.text courage:self.courageLabel.text firepower:self.firepowerLabel.text skill:self.skillLabel.text team:teamValue teamIcon:@""];
         
-        TransformerNetworkAPI *transformerNetworkAPI = [TransformerNetworkAPI alloc];
+        TransformerNetworkAPI *transformerNetworkAPI = [[TransformerNetworkAPI alloc] init];
         [transformerNetworkAPI createTransformer:self.requestBodyDataModel :^(NSDictionary * _Nonnull dataDictionary, NSError * _Nonnull error) {
             if (!error) {
                 

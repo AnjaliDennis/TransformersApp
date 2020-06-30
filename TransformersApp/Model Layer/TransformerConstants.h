@@ -64,6 +64,9 @@ extern NSString * const CONSTANT_ALERT_UPDATE_FAILURE_MESSAGE_STRING;
 extern NSString * const CONSTANT_SAVE_BUTTON;
 extern NSString * const CONSTANT_EDIT_BUTTON_OK;
 
+extern NSString * const CONSTANT_URL_TOKEN_OK;
+extern NSString * const CONSTANT_URL;
+
 @interface TransformerConstants : NSObject
 
 @end

@@ -18,7 +18,7 @@
     [super viewDidLoad];
     self.transformerDataModelArray = [[NSMutableArray alloc] init];
     self.currentIndexPath = [[NSIndexPath alloc] init];
-    TransformerNetworkAPI *transformerNetworkAPI = [TransformerNetworkAPI alloc];
+    TransformerNetworkAPI *transformerNetworkAPI = [[TransformerNetworkAPI alloc] init];
     [transformerNetworkAPI getTokenWithCompletionHandler:^(NSError * _Nonnull error) {
         if (!error) {
             __typeof(self) __weak weakSelf = self;
@@ -98,7 +98,7 @@
 }
 
 - (IBAction)refreshTransformerList:(id)sender {
-    TransformerNetworkAPI *transformerNetworkAPI = [TransformerNetworkAPI alloc];
+    TransformerNetworkAPI *transformerNetworkAPI = [[TransformerNetworkAPI alloc] init];
     [transformerNetworkAPI getTransformerListWithCompletionHandler:^(NSDictionary * _Nonnull dataDictionary, NSError * _Nonnull error) {
         __typeof(self) __weak weakSelf = self;
         if (!error) {
@@ -167,7 +167,7 @@
 
 - (IBAction)collectionViewCellDeleteButtonPressed:(UIButton *)button{
     NSString *transformerId = [self.transformerDataModelArray objectAtIndex:button.tag].transformerId;
-    TransformerNetworkAPI *transformerNetworkApi = [TransformerNetworkAPI alloc];
+    TransformerNetworkAPI *transformerNetworkApi = [[TransformerNetworkAPI alloc] init];
     [transformerNetworkApi deleteTransformer:transformerId :^(BOOL status) {
         if (status) {
             [self.transformerDataModelArray removeObjectAtIndex:button.tag];
@@ -273,7 +273,7 @@
         selectedCell.ratingValueLabel.text = [NSString stringWithFormat:@"%d",overallRating];
         updatedTransformerDataModel.rating = @"";
         
-        TransformerNetworkAPI *transformerNetworkApi = [TransformerNetworkAPI alloc];
+        TransformerNetworkAPI *transformerNetworkApi = [[TransformerNetworkAPI alloc] init];
         [transformerNetworkApi updateTransformer:updatedTransformerDataModel :^(NSDictionary * _Nonnull dataDictionary, NSError * _Nonnull error) {
             if (!error) {
                 if ([dataDictionary count] != 0){
