@@ -63,24 +63,12 @@
         NSString *teamValue = (self.transformerTeamType.selectedSegmentIndex == 0) ? CONSTANT_TEAM_AUTOBOT_STRING : CONSTANT_TEAM_DECEPTICON_STRING;
         self.requestBodyDataModel = [[TransformerDataModel alloc] initWithTransformerId:@"" name:self.transformerNameTextField.text strength:self.strengthLabel.text intelligence:self.intelligenceLabel.text speed:self.speedLabel.text endurance:self.enduranceLabel.text rank:self.rankLabel.text courage:self.courageLabel.text firepower:self.firepowerLabel.text skill:self.skillLabel.text team:teamValue teamIcon:@""];
         
-        [self resetToDefaultUIValues];
-        
         TransformerNetworkAPI *transformerNetworkAPI = [TransformerNetworkAPI alloc];
         [transformerNetworkAPI createTransformer:self.requestBodyDataModel :^(NSDictionary * _Nonnull dataDictionary, NSError * _Nonnull error) {
             if (!error) {
                 
-                self.dataModel.transformerId = [dataDictionary valueForKey:CONSTANT_ID_KEY_STRING];
-                self.dataModel.name = [dataDictionary valueForKey:CONSTANT_NAME_KEY_STRING];
-                self.dataModel.strength = [dataDictionary valueForKey:CONSTANT_STRENGTH_KEY_STRING];
-                self.dataModel.intelligence = [dataDictionary valueForKey:CONSTANT_INTELLIGENCE_KEY_STRING];
-                self.dataModel.speed = [dataDictionary valueForKey:CONSTANT_SPEED_KEY_STRING];
-                self.dataModel.endurance = [dataDictionary valueForKey:CONSTANT_ENDURANCE_KEY_STRING];
-                self.dataModel.rank = [dataDictionary valueForKey:CONSTANT_RANK_KEY_STRING];
-                self.dataModel.courage = [dataDictionary valueForKey:CONSTANT_COURAGE_KEY_STRING];
-                self.dataModel.firepower = [dataDictionary valueForKey:CONSTANT_FIREPOWER_KEY_STRING];
-                self.dataModel.skill = [dataDictionary valueForKey:CONSTANT_SKILL_KEY_STRING];
-                self.dataModel.team = [dataDictionary valueForKey:CONSTANT_TEAM_KEY_STRING];
-                
+                [self parseAndStoreCreatedTransformer:dataDictionary];
+                [self resetToDefaultUIValues];
                 
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:CONSTANT_ALERT_SUCCESS_TITLE_STRING message:CONSTANT_ALERT_CREATE_SUCCESS_MESSAGE_STRING preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:CONSTANT_ALERT_BUTTON_OK style:UIAlertActionStyleDefault handler:nil];
@@ -95,6 +83,21 @@
             }
         }];
     }
+}
+
+-(void) parseAndStoreCreatedTransformer: (NSDictionary *) dataDictionary {
+    self.createdTransformerDataModel = [[TransformerDataModel alloc] init];
+    self.createdTransformerDataModel.transformerId = [dataDictionary valueForKey:CONSTANT_ID_KEY_STRING];
+    self.createdTransformerDataModel.name = [dataDictionary valueForKey:CONSTANT_NAME_KEY_STRING];
+    self.createdTransformerDataModel.strength = [dataDictionary valueForKey:CONSTANT_STRENGTH_KEY_STRING];
+    self.createdTransformerDataModel.intelligence = [dataDictionary valueForKey:CONSTANT_INTELLIGENCE_KEY_STRING];
+    self.createdTransformerDataModel.speed = [dataDictionary valueForKey:CONSTANT_SPEED_KEY_STRING];
+    self.createdTransformerDataModel.endurance = [dataDictionary valueForKey:CONSTANT_ENDURANCE_KEY_STRING];
+    self.createdTransformerDataModel.rank = [dataDictionary valueForKey:CONSTANT_RANK_KEY_STRING];
+    self.createdTransformerDataModel.courage = [dataDictionary valueForKey:CONSTANT_COURAGE_KEY_STRING];
+    self.createdTransformerDataModel.firepower = [dataDictionary valueForKey:CONSTANT_FIREPOWER_KEY_STRING];
+    self.createdTransformerDataModel.skill = [dataDictionary valueForKey:CONSTANT_SKILL_KEY_STRING];
+    self.createdTransformerDataModel.team = [dataDictionary valueForKey:CONSTANT_TEAM_KEY_STRING];
 }
 
 -(void) resetToDefaultUIValues {

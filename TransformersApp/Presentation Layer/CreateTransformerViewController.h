@@ -34,7 +34,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UISlider *firepowerSlider;
 @property (weak, nonatomic) IBOutlet UISlider *skillSlider;
 
-@property (strong, nonatomic) TransformerDataModel *dataModel;
+@property (strong, nonatomic) TransformerDataModel *createdTransformerDataModel;
 @property (strong, nonatomic) TransformerDataModel *requestBodyDataModel;
 
 
