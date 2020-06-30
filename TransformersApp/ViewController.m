@@ -37,31 +37,31 @@
     TransformerDataModel *transformerDataModel = [[TransformerDataModel alloc] init];
     transformerDataModel = [self.transformerDataModelArray objectAtIndex:indexPath.row];
     cell.nameTextField.text = transformerDataModel.name;
-    cell.teamValueSegmentedControl.selectedSegmentIndex = ([transformerDataModel.team isEqualToString:@"Autobot"]) ? 0 : 1;
+    cell.teamValueSegmentedControl.selectedSegmentIndex = ([transformerDataModel.team isEqualToString:CONSTANT_AUTOBOT_STRING]) ? 0 : 1;
     
     
     cell.strengthSlider.value = transformerDataModel.strength.intValue;
-    cell.strengthLabel.text = [@"Strength: " stringByAppendingString:transformerDataModel.strength];
+    cell.strengthLabel.text = [CONSTANT_STRENGTH_STRING stringByAppendingString:transformerDataModel.strength];
     cell.intelligenceSlider.value = transformerDataModel.intelligence.intValue;
-    cell.intelligenceLabel.text = [@"Intelligence: " stringByAppendingString:transformerDataModel.intelligence];
+    cell.intelligenceLabel.text = [CONSTANT_INTELLIGENCE_STRING stringByAppendingString:transformerDataModel.intelligence];
     cell.speedSlider.value = transformerDataModel.speed.intValue;
-    cell.speedLabel.text = [@"Speed: " stringByAppendingString:transformerDataModel.speed];
+    cell.speedLabel.text = [CONSTANT_SPEED_STRING stringByAppendingString:transformerDataModel.speed];
     cell.enduranceSlider.value = transformerDataModel.endurance.intValue;
-    cell.enduranceLabel.text = [@"Endurance: " stringByAppendingString:transformerDataModel.endurance];
+    cell.enduranceLabel.text = [CONSTANT_ENDURANCE_STRING stringByAppendingString:transformerDataModel.endurance];
     cell.rankSlider.value = transformerDataModel.rank.intValue;
-    cell.rankLabel.text = [@"Rank: " stringByAppendingString:transformerDataModel.rank];
+    cell.rankLabel.text = [CONSTANT_RANK_STRING stringByAppendingString:transformerDataModel.rank];
     cell.courageSlider.value = transformerDataModel.courage.intValue;
-    cell.courageLabel.text = [@"Courage: " stringByAppendingString:transformerDataModel.courage];
+    cell.courageLabel.text = [CONSTANT_COURAGE_STRING stringByAppendingString:transformerDataModel.courage];
     cell.firepowerSlider.value = transformerDataModel.firepower.intValue;
-    cell.firepowerLabel.text = [@"Firepower: " stringByAppendingString:transformerDataModel.firepower];
+    cell.firepowerLabel.text = [CONSTANT_FIREPOWER_STRING stringByAppendingString:transformerDataModel.firepower];
     cell.skillSlider.value = transformerDataModel.skill.intValue;
-    cell.skillLabel.text = [@"Skill: " stringByAppendingString:transformerDataModel.skill];
+    cell.skillLabel.text = [CONSTANT_SKILL_STRING stringByAppendingString:transformerDataModel.skill];
     
     cell.ratingValueLabel.text = transformerDataModel.rating;
     NSURL *imageUrl = [NSURL URLWithString:transformerDataModel.team_icon];
     NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
     cell.teamIconImagView.image = [UIImage imageWithData: imageData];
-    cell.backgroundColor = ([transformerDataModel.team isEqualToString:@"Autobot"]) ? [UIColor colorNamed:@"AutobotColor"] : [UIColor colorNamed:@"DecepticonColor"];
+    cell.backgroundColor = ([transformerDataModel.team isEqualToString:CONSTANT_AUTOBOT_STRING]) ? [UIColor colorNamed:@"AutobotColor"] : [UIColor colorNamed:@"DecepticonColor"];
     cell.deleteTransformerButton.tag = indexPath.row;
     [cell.deleteTransformerButton addTarget:self action:@selector(collectionViewCellDeleteButtonPressed:) forControlEvents:UIControlEventTouchUpInside];
     cell.editTransformerButton.tag = indexPath.row;
@@ -102,8 +102,8 @@
     [transformerNetworkAPI getTransformerListWithCompletionHandler:^(NSDictionary * _Nonnull dataDictionary, NSError * _Nonnull error) {
         __typeof(self) __weak weakSelf = self;
         if (!error) {
-            NSLog(@"DataDict:%@", dataDictionary);
-            if ([[dataDictionary objectForKey:@"transformers"] count] != 0){
+            //NSLog(@"DataDict:%@", dataDictionary);
+            if ([[dataDictionary objectForKey:CONSTANT_TRANSFORMERS_KEY_STRING] count] != 0){
                 [weakSelf parseData:dataDictionary];
             }
         }
@@ -114,29 +114,29 @@
 }
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    if ([[segue identifier] isEqualToString:@"segueTo BattlefieldScreen"]) {
+    if ([[segue identifier] isEqualToString:@"segueToBattlefieldScreen"]) {
         BattlefieldTransformerViewController *destVC = [segue destinationViewController];
         destVC.transformerDataModelArray = self.transformerDataModelArray;
     }
 }
 
 -(void) parseData : (NSDictionary *) dataDictionary {
-    NSArray *responseDataArray = [dataDictionary objectForKey:@"transformers"];
+    NSArray *responseDataArray = [dataDictionary objectForKey:CONSTANT_TRANSFORMERS_KEY_STRING];
     [self.transformerDataModelArray removeAllObjects];
     for (NSDictionary *itemDictionary in responseDataArray) {
         TransformerDataModel *transformerDataModel = [[TransformerDataModel alloc] init];
-        transformerDataModel.transformerId = [itemDictionary valueForKey:@"id"];
-        transformerDataModel.name = [itemDictionary valueForKey:@"name"];
-        transformerDataModel.strength = [itemDictionary valueForKey:@"strength"];
-        transformerDataModel.intelligence = [itemDictionary valueForKey:@"intelligence"];
-        transformerDataModel.speed = [itemDictionary valueForKey:@"speed"];
-        transformerDataModel.endurance = [itemDictionary valueForKey:@"endurance"];
-        transformerDataModel.rank = [itemDictionary valueForKey:@"rank"];
-        transformerDataModel.courage = [itemDictionary valueForKey:@"courage"];
-        transformerDataModel.firepower = [itemDictionary valueForKey:@"firepower"];
-        transformerDataModel.skill = [itemDictionary valueForKey:@"skill"];
-        transformerDataModel.team = ([[itemDictionary valueForKey:@"team"] isEqualToString:@"A"]) ? @"Autobot" : @"Decepticon";
-        transformerDataModel.team_icon = [itemDictionary valueForKey:@"team_icon"];
+        transformerDataModel.transformerId = [itemDictionary valueForKey:CONSTANT_ID_KEY_STRING];
+        transformerDataModel.name = [itemDictionary valueForKey:CONSTANT_NAME_KEY_STRING];
+        transformerDataModel.strength = [itemDictionary valueForKey:CONSTANT_STRENGTH_KEY_STRING];
+        transformerDataModel.intelligence = [itemDictionary valueForKey:CONSTANT_INTELLIGENCE_KEY_STRING];
+        transformerDataModel.speed = [itemDictionary valueForKey:CONSTANT_SPEED_KEY_STRING];
+        transformerDataModel.endurance = [itemDictionary valueForKey:CONSTANT_ENDURANCE_KEY_STRING];
+        transformerDataModel.rank = [itemDictionary valueForKey:CONSTANT_RANK_KEY_STRING];
+        transformerDataModel.courage = [itemDictionary valueForKey:CONSTANT_COURAGE_KEY_STRING];
+        transformerDataModel.firepower = [itemDictionary valueForKey:CONSTANT_FIREPOWER_KEY_STRING];
+        transformerDataModel.skill = [itemDictionary valueForKey:CONSTANT_SKILL_KEY_STRING];
+        transformerDataModel.team = ([[itemDictionary valueForKey:CONSTANT_TEAM_KEY_STRING] isEqualToString:CONSTANT_TEAM_AUTOBOT_STRING]) ? CONSTANT_AUTOBOT_STRING : CONSTANT_DECEPTICON_STRING;
+        transformerDataModel.team_icon = [itemDictionary valueForKey:CONSTANT_TEAM_ICON_KEY_STRING];
         //calculate overall rating->(Strength + Intelligence + Speed + Endurance + Firepower).
         int overallRating = transformerDataModel.strength.intValue + transformerDataModel.intelligence.intValue + transformerDataModel.speed.intValue + transformerDataModel.endurance.intValue + transformerDataModel.firepower.intValue;
         transformerDataModel.rating =  [NSString stringWithFormat:@"%d", overallRating];
@@ -147,18 +147,18 @@
 
 -(TransformerDataModel *) parseUpdatedData:(NSDictionary *) dataDictionary {
     TransformerDataModel *transformerDataModel = [[TransformerDataModel alloc] init];
-    transformerDataModel.transformerId = [dataDictionary valueForKey:@"id"];
-    transformerDataModel.name = [dataDictionary valueForKey:@"name"];
-    transformerDataModel.strength = [dataDictionary valueForKey:@"strength"];
-    transformerDataModel.intelligence = [dataDictionary valueForKey:@"intelligence"];
-    transformerDataModel.speed = [dataDictionary valueForKey:@"speed"];
-    transformerDataModel.endurance = [dataDictionary valueForKey:@"endurance"];
-    transformerDataModel.rank = [dataDictionary valueForKey:@"rank"];
-    transformerDataModel.courage = [dataDictionary valueForKey:@"courage"];
-    transformerDataModel.firepower = [dataDictionary valueForKey:@"firepower"];
-    transformerDataModel.skill = [dataDictionary valueForKey:@"skill"];
-    transformerDataModel.team = ([[dataDictionary valueForKey:@"team"] isEqualToString:@"A"]) ? @"Autobot" : @"Decepticon";
-    transformerDataModel.team_icon = [dataDictionary valueForKey:@"team_icon"];
+    transformerDataModel.transformerId = [dataDictionary valueForKey:CONSTANT_ID_KEY_STRING];
+    transformerDataModel.name = [dataDictionary valueForKey:CONSTANT_NAME_KEY_STRING];
+    transformerDataModel.strength = [dataDictionary valueForKey:CONSTANT_STRENGTH_KEY_STRING];
+    transformerDataModel.intelligence = [dataDictionary valueForKey:CONSTANT_INTELLIGENCE_KEY_STRING];
+    transformerDataModel.speed = [dataDictionary valueForKey:CONSTANT_SPEED_KEY_STRING];
+    transformerDataModel.endurance = [dataDictionary valueForKey:CONSTANT_ENDURANCE_KEY_STRING];
+    transformerDataModel.rank = [dataDictionary valueForKey:CONSTANT_RANK_KEY_STRING];
+    transformerDataModel.courage = [dataDictionary valueForKey:CONSTANT_COURAGE_KEY_STRING];
+    transformerDataModel.firepower = [dataDictionary valueForKey:CONSTANT_FIREPOWER_KEY_STRING];
+    transformerDataModel.skill = [dataDictionary valueForKey:CONSTANT_SKILL_KEY_STRING];
+    transformerDataModel.team = ([[dataDictionary valueForKey:CONSTANT_TEAM_KEY_STRING] isEqualToString:CONSTANT_TEAM_AUTOBOT_STRING]) ? CONSTANT_AUTOBOT_STRING : CONSTANT_DECEPTICON_STRING;
+    transformerDataModel.team_icon = [dataDictionary valueForKey:CONSTANT_TEAM_ICON_KEY_STRING];
     //calculate overall rating->(Strength + dataDictionary + Speed + Endurance + Firepower).
     int overallRating = transformerDataModel.strength.intValue + transformerDataModel.intelligence.intValue + transformerDataModel.speed.intValue + transformerDataModel.endurance.intValue + transformerDataModel.firepower.intValue;
     transformerDataModel.rating =  [NSString stringWithFormat:@"%d", overallRating];
@@ -166,7 +166,6 @@
 }
 
 - (IBAction)collectionViewCellDeleteButtonPressed:(UIButton *)button{
-    NSLog(@"button tag: %d", (int)button.tag);
     NSString *transformerId = [self.transformerDataModelArray objectAtIndex:button.tag].transformerId;
     TransformerNetworkAPI *transformerNetworkApi = [TransformerNetworkAPI alloc];
     [transformerNetworkApi deleteTransformer:transformerId :^(BOOL status) {
@@ -174,14 +173,14 @@
             [self.transformerDataModelArray removeObjectAtIndex:button.tag];
             [self.autobotCollectionView reloadData];
             
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:@"Transformer has been deleted successfully" preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:CONSTANT_ALERT_SUCCESS_TITLE_STRING message:CONSTANT_ALERT_DELETE_SUCCESS_MESSAGE_STRING preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:CONSTANT_ALERT_BUTTON_OK style:UIAlertActionStyleDefault handler:nil];
             [alert addAction:defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
         }
         else {
-            UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Failure" message:@"Failed to delete Transformer. Please Try Again"  preferredStyle:UIAlertControllerStyleAlert];
-            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+            UIAlertController *alert = [UIAlertController alertControllerWithTitle:CONSTANT_ALERT_FAILURE_TITLE_STRING message:CONSTANT_ALERT_DELETE_FAILURE_MESSAGE_STRING  preferredStyle:UIAlertControllerStyleAlert];
+            UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:CONSTANT_ALERT_BUTTON_OK style:UIAlertActionStyleDefault handler:nil];
             [alert addAction:defaultAction];
             [self presentViewController:alert animated:YES completion:nil];
         }
@@ -194,35 +193,35 @@
     
     switch (sender.tag) {
         case 0:
-            selectedCell.strengthLabel.text = [@"Strength: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            selectedCell.strengthLabel.text = [CONSTANT_STRENGTH_STRING stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
             break;
             
         case 1:
-            selectedCell.intelligenceLabel.text = [@"Intelligence: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            selectedCell.intelligenceLabel.text = [CONSTANT_INTELLIGENCE_STRING stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
             break;
             
         case 2:
-            selectedCell.speedLabel.text = [@"Speed: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            selectedCell.speedLabel.text = [CONSTANT_SPEED_STRING stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
             break;
             
         case 3:
-            selectedCell.enduranceLabel.text = [@"Endurance: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            selectedCell.enduranceLabel.text = [CONSTANT_ENDURANCE_STRING stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
             break;
             
         case 4:
-            selectedCell.rankLabel.text = [@"Rank: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            selectedCell.rankLabel.text = [CONSTANT_RANK_STRING stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
             break;
             
         case 5:
-            selectedCell.courageLabel.text = [@"Courage: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            selectedCell.courageLabel.text = [CONSTANT_COURAGE_STRING stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
             break;
             
         case 6:
-            selectedCell.firepowerLabel.text = [@"Firepower: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            selectedCell.firepowerLabel.text = [CONSTANT_FIREPOWER_STRING stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
             break;
             
         case 7:
-            selectedCell.skillLabel.text = [@"Skill: " stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
+            selectedCell.skillLabel.text = [CONSTANT_SKILL_STRING stringByAppendingString:[NSString stringWithFormat:@"%d", (int)sender.value]];
             break;
             
         default:
@@ -248,7 +247,7 @@
     selectedCell.firepowerSlider.userInteractionEnabled = self.isCellEditing;
     selectedCell.skillSlider.userInteractionEnabled = self.isCellEditing;
     
-    [selectedCell.editTransformerButton setTitle:((self.isCellEditing) ? @"Save" : @"Edit") forState:UIControlStateNormal];
+    [selectedCell.editTransformerButton setTitle:((self.isCellEditing) ? CONSTANT_SAVE_BUTTON : CONSTANT_EDIT_BUTTON_OK) forState:UIControlStateNormal];
     self.autobotCollectionView.scrollEnabled = !self.isCellEditing;
     
     if(!self.isCellEditing) {
@@ -268,29 +267,27 @@
         updatedTransformerDataModel.courage = [NSString stringWithFormat:@"%d",(int)selectedCell.courageSlider.value];
         updatedTransformerDataModel.firepower = [NSString stringWithFormat:@"%d",(int)selectedCell.firepowerSlider.value];
         updatedTransformerDataModel.skill = [NSString stringWithFormat:@"%d",(int)selectedCell.skillSlider.value];
-        updatedTransformerDataModel.team = (selectedCell.teamValueSegmentedControl.selectedSegmentIndex == 0) ? @"A" : @"D";
-        updatedTransformerDataModel.team_icon = @"";//uneditedTransformerDataModel.team_icon;
+        updatedTransformerDataModel.team = (selectedCell.teamValueSegmentedControl.selectedSegmentIndex == 0) ? CONSTANT_TEAM_AUTOBOT_STRING : CONSTANT_TEAM_DECEPTICON_STRING;
+        updatedTransformerDataModel.team_icon = @"";
         int overallRating = updatedTransformerDataModel.strength.intValue + updatedTransformerDataModel.intelligence.intValue + updatedTransformerDataModel.speed.intValue + updatedTransformerDataModel.endurance.intValue + updatedTransformerDataModel.firepower.intValue;
         selectedCell.ratingValueLabel.text = [NSString stringWithFormat:@"%d",overallRating];
-        updatedTransformerDataModel.rating = @"";//[NSString stringWithFormat:@"%d", overallRating];
+        updatedTransformerDataModel.rating = @"";
         
         TransformerNetworkAPI *transformerNetworkApi = [TransformerNetworkAPI alloc];
         [transformerNetworkApi updateTransformer:updatedTransformerDataModel :^(NSDictionary * _Nonnull dataDictionary, NSError * _Nonnull error) {
-            // __typeof(self) __weak weakSelf = self;
             if (!error) {
-                NSLog(@"DataDict:%@", dataDictionary);
                 if ([dataDictionary count] != 0){
                     TransformerDataModel *updatedResponseDataModel = [self parseUpdatedData:dataDictionary];
                     [self.transformerDataModelArray replaceObjectAtIndex:self.currentIndexPath.row withObject:updatedResponseDataModel];
                     [self.autobotCollectionView reloadData];
-                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Success" message:@"Transformer has been updated successfully" preferredStyle:UIAlertControllerStyleAlert];
-                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:CONSTANT_ALERT_SUCCESS_TITLE_STRING message:CONSTANT_ALERT_UPDATE_SUCCESS_MESSAGE_STRING preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:CONSTANT_ALERT_BUTTON_OK style:UIAlertActionStyleDefault handler:nil];
                     [alert addAction:defaultAction];
                     [self presentViewController:alert animated:YES completion:nil];
                 }
                 else {
-                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:@"Failure" message:@"Failed to update Transformer. Please Try Again"  preferredStyle:UIAlertControllerStyleAlert];
-                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:CONSTANT_ALERT_FAILURE_TITLE_STRING message:CONSTANT_ALERT_UPDATE_FAILURE_MESSAGE_STRING  preferredStyle:UIAlertControllerStyleAlert];
+                    UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:CONSTANT_ALERT_BUTTON_OK style:UIAlertActionStyleDefault handler:nil];
                     [alert addAction:defaultAction];
                     [self presentViewController:alert animated:YES completion:nil];
                 }

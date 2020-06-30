@@ -9,6 +9,7 @@
 #import <UIKit/UIKit.h>
 #import "BattlefieldTransformerTableViewCell.h"
 #import "TransformerDataModel.h"
+#import "TransformerConstants.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

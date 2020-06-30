@@ -27,7 +27,6 @@
 }
 
 -(void) viewWillAppear:(BOOL)animated {
-    NSLog(@"viewwillappear");
     [super viewWillAppear:animated];
     if(!self.isSorted) {
         [self sortTransformers];
@@ -49,11 +48,11 @@
     BattlefieldTransformerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
 
     if (self.sortedAutobotsDataModelArray.count <= indexPath.row) {
-        cell.autobotNameLabel.text = @"Unavailable";
-        cell.autobotRatingLabel.text = @"Rating: Unavailable";
-        cell.autobotStatsLabel.text = @"Stats: Unavailable";
-        cell.autobotRankLabel.text = @"Rank: Unavailable";
-        cell.autobotResultLabel.text = self.isBattleComplete ? @"Battle Missed" : @"Commence Battle";
+        cell.autobotNameLabel.text = CONSTANT_UNAVAILABLE_STRING;
+        cell.autobotRatingLabel.text = CONSTANT_RATING_UNAVAILABLE_STRING;
+        cell.autobotStatsLabel.text = CONSTANT_STATS_UNAVAILABLE_STRING;
+        cell.autobotRankLabel.text = CONSTANT_RANK_UNAVAILABLE_STRING;
+        cell.autobotResultLabel.text = self.isBattleComplete ? CONSTANT_BATTLE_MISSED_STRING : CONSTANT_COMMENCE_BATTLE_STRING;
     }
     else  {
         TransformerDataModel *autobotDataModel = [self.sortedAutobotsDataModelArray objectAtIndex:indexPath.row];
@@ -61,30 +60,30 @@
         NSURL *imageUrlAutobot = [NSURL URLWithString:autobotDataModel.team_icon];
         NSData *imageDataAutobot = [NSData dataWithContentsOfURL:imageUrlAutobot];
         cell.autobotTeamIcon.image = [UIImage imageWithData: imageDataAutobot];
-        cell.autobotRatingLabel.text = [@"Rating: " stringByAppendingString:autobotDataModel.rating];//[cell.autobotRatingLabel.text stringByAppendingString:autobotDataModel.rating];
+        cell.autobotRatingLabel.text = [CONSTANT_RATING_STRING stringByAppendingString:autobotDataModel.rating];
         NSString *statsString = [NSString stringWithFormat:@"%@, %@, %@, %@, %@, %@, %@, %@",autobotDataModel.strength,autobotDataModel.intelligence,autobotDataModel.speed,autobotDataModel.endurance,autobotDataModel.rank,autobotDataModel.courage,autobotDataModel.firepower,autobotDataModel.skill];
-        cell.autobotStatsLabel.text = [@"Stats: " stringByAppendingString:statsString];
-        cell.autobotRankLabel.text = [@"Rank: " stringByAppendingString:autobotDataModel.rank];
+        cell.autobotStatsLabel.text = [CONSTANT_STATS_STRING stringByAppendingString:statsString];
+        cell.autobotRankLabel.text = [CONSTANT_RANK_STRING stringByAppendingString:autobotDataModel.rank];
         if (self.isBattleComplete) {
             if (autobotDataModel.battleOutcome != nil) {
                 cell.autobotResultLabel.text = autobotDataModel.battleOutcome;
             }
             else {
-                cell.autobotResultLabel.text = @"Survivor";
+                cell.autobotResultLabel.text = CONSTANT_SURVIVOR_STRING;
             }
         }
         else {
-            cell.autobotResultLabel.text = @"Commence Battle";
+            cell.autobotResultLabel.text = CONSTANT_COMMENCE_BATTLE_STRING;
         }
         
     }
     
     if (self.sortedDecepticonsDataModelArray.count <= indexPath.row) {
-        cell.decepticonNameLabel.text = @"Unavailable";
-        cell.decepticonRatingLabel.text = @"Rating: Unavailable";
-        cell.decepticonStatsLabel.text = @"Stats: Unavailable";
-        cell.decepticonRankLabel.text = @"Rank: Unavailable";
-        cell.decepticonResultLabel.text = self.isBattleComplete ? @"Battle Missed" : @"Commence Battle";
+        cell.decepticonNameLabel.text = CONSTANT_UNAVAILABLE_STRING;
+        cell.decepticonRatingLabel.text = CONSTANT_RATING_UNAVAILABLE_STRING;
+        cell.decepticonStatsLabel.text = CONSTANT_STATS_UNAVAILABLE_STRING;
+        cell.decepticonRankLabel.text = CONSTANT_RANK_UNAVAILABLE_STRING;
+        cell.decepticonResultLabel.text = self.isBattleComplete ? CONSTANT_BATTLE_MISSED_STRING : CONSTANT_COMMENCE_BATTLE_STRING;
     }
     else {
         TransformerDataModel *decepticonDataModel = [self.sortedDecepticonsDataModelArray objectAtIndex:indexPath.row];
@@ -92,20 +91,20 @@
         NSURL *imageUrlDecepticon = [NSURL URLWithString:decepticonDataModel.team_icon];
         NSData *imageDataDecepticon = [NSData dataWithContentsOfURL:imageUrlDecepticon];
         cell.decepticonTeamIcon.image = [UIImage imageWithData: imageDataDecepticon];
-        cell.decepticonRatingLabel.text = [@"Rating: " stringByAppendingString:decepticonDataModel.rating]; //[cell.autobotRatingLabel.text stringByAppendingString:decepticonDataModel.rating];
+        cell.decepticonRatingLabel.text = [CONSTANT_RATING_STRING stringByAppendingString:decepticonDataModel.rating];
         NSString *statsString = [NSString stringWithFormat:@"%@, %@, %@, %@, %@, %@, %@, %@",decepticonDataModel.strength,decepticonDataModel.intelligence,decepticonDataModel.speed,decepticonDataModel.endurance,decepticonDataModel.rank,decepticonDataModel.courage,decepticonDataModel.firepower,decepticonDataModel.skill];
-        cell.decepticonStatsLabel.text = [@"Stats: " stringByAppendingString:statsString];
-        cell.decepticonRankLabel.text = [@"Rank: " stringByAppendingString:decepticonDataModel.rank];
+        cell.decepticonStatsLabel.text = [CONSTANT_STATS_STRING stringByAppendingString:statsString];
+        cell.decepticonRankLabel.text = [CONSTANT_RANK_STRING stringByAppendingString:decepticonDataModel.rank];
         if (self.isBattleComplete) {
             if (decepticonDataModel.battleOutcome != nil) {
                 cell.decepticonResultLabel.text = decepticonDataModel.battleOutcome;
             }
             else {
-                cell.decepticonResultLabel.text = @"Survivor";
+                cell.decepticonResultLabel.text = CONSTANT_SURVIVOR_STRING;
             }
         }
         else {
-            cell.decepticonResultLabel.text = @"Commence Battle";
+            cell.decepticonResultLabel.text = CONSTANT_COMMENCE_BATTLE_STRING;
         }
     }
     
@@ -135,21 +134,21 @@
     self.sortedDecepticonsDataModelArray = [[NSMutableArray alloc] init];
     if (self.transformerDataModelArray.count != 0) {
         NSArray *sortedMainArray = [self.transformerDataModelArray sortedArrayUsingComparator:^NSComparisonResult(NSDictionary *transformer1, NSDictionary *transformer2) {
-                   if ([[transformer1 valueForKey:@"rank"] integerValue] > [[transformer2 valueForKey:@"rank"] integerValue]) {
+                   if ([[transformer1 valueForKey:CONSTANT_RANK_KEY_STRING] integerValue] > [[transformer2 valueForKey:CONSTANT_RANK_KEY_STRING] integerValue]) {
                        return (NSComparisonResult)NSOrderedAscending;
                    }
-                   if ([[transformer1 valueForKey:@"rank"] integerValue] < [[transformer2 valueForKey:@"rank"] integerValue]) {
+                   if ([[transformer1 valueForKey:CONSTANT_RANK_KEY_STRING] integerValue] < [[transformer2 valueForKey:CONSTANT_RANK_KEY_STRING] integerValue]) {
                        return (NSComparisonResult)NSOrderedDescending;
                    }
                    return (NSComparisonResult)NSOrderedSame;
                }];
         
         for (TransformerDataModel *transformerDataModelItem in sortedMainArray) {
-            ([transformerDataModelItem.team isEqualToString:@"Autobot"]) ?  [self.sortedAutobotsDataModelArray addObject:transformerDataModelItem] : [self.sortedDecepticonsDataModelArray addObject:transformerDataModelItem];
+            ([transformerDataModelItem.team isEqualToString:CONSTANT_AUTOBOT_STRING]) ?  [self.sortedAutobotsDataModelArray addObject:transformerDataModelItem] : [self.sortedDecepticonsDataModelArray addObject:transformerDataModelItem];
         }
-        for (TransformerDataModel *transformerDataModelItem in sortedMainArray) {
-            NSLog(@"Sorted rank %@", transformerDataModelItem.rank);
-        }
+//        for (TransformerDataModel *transformerDataModelItem in sortedMainArray) {
+//            NSLog(@"Sorted rank %@", transformerDataModelItem.rank);
+//        }
     }
     self.isSorted = YES;
     [self.transformerBattleTableView reloadData];
@@ -157,8 +156,8 @@
 
 - (IBAction)startTransformerBattle:(id)sender {
     int totalBattles ;
-    NSString *annhilatorAutobotName = @"optimus prime";
-    NSString *annhilatorDecepticonName = @"predaking";
+    NSString *annhilatorAutobotName = CONSTANT_AUTOBOT_ANNHILATOR_NAME_STRING;
+    NSString *annhilatorDecepticonName = CONSTANT_DECEPTICON_ANNHILATOR_NAME_STRING;
     if (self.sortedAutobotsDataModelArray.count >= self.sortedDecepticonsDataModelArray.count) {
         totalBattles = (int)self.sortedDecepticonsDataModelArray.count;
     }
@@ -183,8 +182,8 @@
         }
         else if (isDecepticonAnnhilator) {
             //decepticon victor
-            autobotTransformerDataModel.battleOutcome = @"Loser";
-            decepticonTransformerDataModel.battleOutcome = @"Winner";
+            autobotTransformerDataModel.battleOutcome = CONSTANT_LOSER_STRING;
+            decepticonTransformerDataModel.battleOutcome = CONSTANT_WINNER_STRING;
             [self.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:autobotTransformerDataModel];
             [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:decepticonTransformerDataModel];
             battleWonByDecepticons += 1;
@@ -192,8 +191,8 @@
         }
         else if (isAutobotAnnhilator) {
             //autobot victor
-            autobotTransformerDataModel.battleOutcome = @"Winner";
-            decepticonTransformerDataModel.battleOutcome = @"Loser";
+            autobotTransformerDataModel.battleOutcome = CONSTANT_WINNER_STRING;
+            decepticonTransformerDataModel.battleOutcome = CONSTANT_LOSER_STRING;
             [self.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:autobotTransformerDataModel];
             [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:decepticonTransformerDataModel];
             battlesWonByAutobots += 1;
@@ -203,8 +202,8 @@
         
         if (autobotTransformerDataModel.courage.intValue > decepticonTransformerDataModel.courage.intValue && autobotTransformerDataModel.strength.intValue > decepticonTransformerDataModel.strength.intValue) {
             if((autobotTransformerDataModel.courage.intValue - decepticonTransformerDataModel.courage.intValue >= 4) && (autobotTransformerDataModel.strength.intValue - decepticonTransformerDataModel.strength.intValue >= 3)) {
-                autobotTransformerDataModel.battleOutcome = @"Winner";
-                decepticonTransformerDataModel.battleOutcome = @"Loser";
+                autobotTransformerDataModel.battleOutcome = CONSTANT_WINNER_STRING;
+                decepticonTransformerDataModel.battleOutcome = CONSTANT_LOSER_STRING;
                 [self.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:autobotTransformerDataModel];
                 [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:decepticonTransformerDataModel];
                 battlesWonByAutobots += 1;
@@ -213,8 +212,8 @@
         }
         else if (decepticonTransformerDataModel.courage.intValue > autobotTransformerDataModel.courage.intValue && decepticonTransformerDataModel.strength.intValue > autobotTransformerDataModel.strength.intValue) {
             if((decepticonTransformerDataModel.courage.intValue - autobotTransformerDataModel.courage.intValue >= 4) && (decepticonTransformerDataModel.strength.intValue - autobotTransformerDataModel.strength.intValue >= 3)) {
-                autobotTransformerDataModel.battleOutcome = @"Loser";
-                decepticonTransformerDataModel.battleOutcome = @"Winner";
+                autobotTransformerDataModel.battleOutcome = CONSTANT_LOSER_STRING;
+                decepticonTransformerDataModel.battleOutcome = CONSTANT_WINNER_STRING;
                 [self.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:autobotTransformerDataModel];
                 [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:decepticonTransformerDataModel];
                 battleWonByDecepticons += 1;
@@ -223,16 +222,16 @@
         }
         
         if ((autobotTransformerDataModel.skill.intValue > decepticonTransformerDataModel.skill.intValue) && (autobotTransformerDataModel.skill.intValue - decepticonTransformerDataModel.skill.intValue >= 3)) {
-            autobotTransformerDataModel.battleOutcome = @"Winner";
-            decepticonTransformerDataModel.battleOutcome = @"Loser";
+            autobotTransformerDataModel.battleOutcome = CONSTANT_WINNER_STRING;
+            decepticonTransformerDataModel.battleOutcome = CONSTANT_LOSER_STRING;
             [self.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:autobotTransformerDataModel];
             [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:decepticonTransformerDataModel];
             battlesWonByAutobots += 1;
             continue;
         }
         else if ((decepticonTransformerDataModel.skill.intValue > autobotTransformerDataModel.skill.intValue) && (decepticonTransformerDataModel.skill.intValue - autobotTransformerDataModel.skill.intValue >= 3)) {
-            autobotTransformerDataModel.battleOutcome = @"Loser";
-            decepticonTransformerDataModel.battleOutcome = @"Winner";
+            autobotTransformerDataModel.battleOutcome = CONSTANT_LOSER_STRING;
+            decepticonTransformerDataModel.battleOutcome = CONSTANT_WINNER_STRING;
             [self.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:autobotTransformerDataModel];
             [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:decepticonTransformerDataModel];
             battleWonByDecepticons += 1;
@@ -240,16 +239,16 @@
         }
         
         if(autobotTransformerDataModel.rating.intValue > decepticonTransformerDataModel.rating.intValue) {
-            autobotTransformerDataModel.battleOutcome = @"Winner";
-            decepticonTransformerDataModel.battleOutcome = @"Loser";
+            autobotTransformerDataModel.battleOutcome = CONSTANT_WINNER_STRING;
+            decepticonTransformerDataModel.battleOutcome = CONSTANT_LOSER_STRING;
             [self.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:autobotTransformerDataModel];
             [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:decepticonTransformerDataModel];
             battlesWonByAutobots += 1;
             continue;
         }
         else if(decepticonTransformerDataModel.rating.intValue > autobotTransformerDataModel.rating.intValue) {
-            autobotTransformerDataModel.battleOutcome = @"Loser";
-            decepticonTransformerDataModel.battleOutcome = @"Winner";
+            autobotTransformerDataModel.battleOutcome = CONSTANT_LOSER_STRING;
+            decepticonTransformerDataModel.battleOutcome = CONSTANT_WINNER_STRING;
             [self.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:autobotTransformerDataModel];
             [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:decepticonTransformerDataModel];
             battleWonByDecepticons += 1;
@@ -257,8 +256,8 @@
         }
         
         if (autobotTransformerDataModel.rating.intValue == decepticonTransformerDataModel.rating.intValue) {
-            autobotTransformerDataModel.battleOutcome = @"Destroyed";
-            decepticonTransformerDataModel.battleOutcome = @"Destroyed";
+            autobotTransformerDataModel.battleOutcome = CONSTANT_DESTROYED_STRING;
+            decepticonTransformerDataModel.battleOutcome = CONSTANT_DESTROYED_STRING;
             [self.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:autobotTransformerDataModel];
             [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:decepticonTransformerDataModel];
             continue;
@@ -268,14 +267,19 @@
     self.startBattleButton.hidden = self.isBattleComplete;
     NSLog(@"a: %d b: %d", battlesWonByAutobots, battleWonByDecepticons);
     if (self.isGameOVerByAnnhilation) {
-        self.battlefieldBannerLabel.text = @"Game over by Annhilitation";
+        self.battlefieldBannerLabel.text = CONSTANT_GAMEOVER_STRING;
     }
     else {
-        if (battlesWonByAutobots > battleWonByDecepticons) {
-            self.battlefieldBannerLabel.text = @"Battle is won by AUTOBOTS";
+        if (battlesWonByAutobots == battleWonByDecepticons) {
+            self.battlefieldBannerLabel.text = CONSTANT_BATTLE_TIE_STRING;
         }
         else {
-            self.battlefieldBannerLabel.text = @"Battle is won by DECEPTICONS";
+            if (battlesWonByAutobots > battleWonByDecepticons) {
+                self.battlefieldBannerLabel.text = CONSTANT_BATTLE_AUTOBOTS_STRING;
+            }
+            else {
+                self.battlefieldBannerLabel.text = CONSTANT_BATTLE_DECEPTICONS_STRING;
+            }
         }
     }
     [self.transformerBattleTableView reloadData];
@@ -286,12 +290,12 @@
     for (int i=0;i<battleCount;i++) {
         TransformerDataModel *updatedAutobotDataModel = [[TransformerDataModel alloc] init];
         updatedAutobotDataModel = [self.sortedAutobotsDataModelArray objectAtIndex:i];
-        updatedAutobotDataModel.battleOutcome = @"Destroyed";
+        updatedAutobotDataModel.battleOutcome = CONSTANT_DESTROYED_STRING;
         [self.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:updatedAutobotDataModel];
         
         TransformerDataModel *updatedDecepticonDataModel = [[TransformerDataModel alloc] init];
         updatedDecepticonDataModel = [self.sortedDecepticonsDataModelArray objectAtIndex:i];
-        updatedDecepticonDataModel.battleOutcome = @"Destroyed";
+        updatedDecepticonDataModel.battleOutcome = CONSTANT_DESTROYED_STRING;
         [self.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:updatedDecepticonDataModel];
     }
 }

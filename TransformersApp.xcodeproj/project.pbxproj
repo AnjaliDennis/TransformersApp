@@ -20,6 +20,7 @@
 		4E56B21124A41A12006F5F92 /* TransformerCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E56B20F24A41A12006F5F92 /* TransformerCollectionViewCell.m */; };
 		4E7C899124A938A400D1EAC1 /* BattlefieldTransformerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7C899024A938A400D1EAC1 /* BattlefieldTransformerTableViewCell.m */; };
 		4E7C899424A93A1700D1EAC1 /* BattlefieldTransformerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7C899324A93A1700D1EAC1 /* BattlefieldTransformerViewController.m */; };
+		4E7C899A24AAA5CD00D1EAC1 /* TransformerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7C899924AAA5CD00D1EAC1 /* TransformerConstants.m */; };
 		4EBD15F624A4F6E200E88EEF /* TransformerNetworkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD15F524A4F6E200E88EEF /* TransformerNetworkAPI.m */; };
 		4EBD15F924A55A6B00E88EEF /* CreateTransformerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD15F824A55A6B00E88EEF /* CreateTransformerViewController.m */; };
 		4EBD15FC24A571D700E88EEF /* TransformerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD15FB24A571D700E88EEF /* TransformerDataModel.m */; };
@@ -68,6 +69,8 @@
 		4E7C899024A938A400D1EAC1 /* BattlefieldTransformerTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BattlefieldTransformerTableViewCell.m; sourceTree = "<group>"; };
 		4E7C899224A93A1700D1EAC1 /* BattlefieldTransformerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = BattlefieldTransformerViewController.h; sourceTree = "<group>"; };
 		4E7C899324A93A1700D1EAC1 /* BattlefieldTransformerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BattlefieldTransformerViewController.m; sourceTree = "<group>"; };
+		4E7C899824AAA5CD00D1EAC1 /* TransformerConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransformerConstants.h; sourceTree = "<group>"; };
+		4E7C899924AAA5CD00D1EAC1 /* TransformerConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransformerConstants.m; sourceTree = "<group>"; };
 		4EBD15F424A4F6E200E88EEF /* TransformerNetworkAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransformerNetworkAPI.h; sourceTree = "<group>"; };
 		4EBD15F524A4F6E200E88EEF /* TransformerNetworkAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransformerNetworkAPI.m; sourceTree = "<group>"; };
 		4EBD15F724A55A6B00E88EEF /* CreateTransformerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateTransformerViewController.h; sourceTree = "<group>"; };
@@ -175,6 +178,8 @@
 			children = (
 				4EBD15FA24A571D700E88EEF /* TransformerDataModel.h */,
 				4EBD15FB24A571D700E88EEF /* TransformerDataModel.m */,
+				4E7C899824AAA5CD00D1EAC1 /* TransformerConstants.h */,
+				4E7C899924AAA5CD00D1EAC1 /* TransformerConstants.m */,
 			);
 			path = "Model Layer";
 			sourceTree = "<group>";
@@ -329,6 +334,7 @@
 				4E44553E24A3E9C800FDC6CC /* ViewController.m in Sources */,
 				4E44553824A3E9C800FDC6CC /* AppDelegate.m in Sources */,
 				4E44553B24A3E9C800FDC6CC /* SceneDelegate.m in Sources */,
+				4E7C899A24AAA5CD00D1EAC1 /* TransformerConstants.m in Sources */,
 				4E56B21124A41A12006F5F92 /* TransformerCollectionViewCell.m in Sources */,
 				4EBD15F624A4F6E200E88EEF /* TransformerNetworkAPI.m in Sources */,
 				4EBD15F924A55A6B00E88EEF /* CreateTransformerViewController.m in Sources */,
