@@ -872,14 +872,22 @@
                     <navigationItem key="navigationItem" title="Create Transformer" id="9Ti-j9-BPl"/>
                     <connections>
                         <outlet property="courageLabel" destination="Tby-L5-qcZ" id="piW-1e-1k1"/>
+                        <outlet property="courageSlider" destination="LZq-QU-vwR" id="YqL-Om-uAT"/>
                         <outlet property="createTransformerButton" destination="apn-zN-9aw" id="KKI-pm-ypE"/>
                         <outlet property="enduranceLabel" destination="JI3-UZ-fdw" id="VPm-st-jbY"/>
+                        <outlet property="enduranceSlider" destination="EyY-6v-CIr" id="yWq-GC-2mg"/>
                         <outlet property="firepowerLabel" destination="2sg-70-kbE" id="fUI-DZ-ajK"/>
+                        <outlet property="firepowerSlider" destination="4LD-xx-wSp" id="ez4-9C-c1L"/>
                         <outlet property="intelligenceLabel" destination="WXF-Fa-BgQ" id="Jlz-fr-DYs"/>
+                        <outlet property="intelligenceSlider" destination="TGt-bO-xyK" id="CLn-oe-vcm"/>
                         <outlet property="rankLabel" destination="pC6-Al-yGo" id="k5R-ht-j2v"/>
+                        <outlet property="rankSlider" destination="jzc-Zh-ci8" id="KtH-Yv-Uy8"/>
                         <outlet property="skillLabel" destination="Stv-Jk-NhV" id="ghe-gR-bgb"/>
+                        <outlet property="skillSlider" destination="56g-jB-YDz" id="xlC-OM-got"/>
                         <outlet property="speedLabel" destination="Uon-OY-wxC" id="RXU-4K-cwp"/>
+                        <outlet property="speedSlider" destination="jJW-sI-fJO" id="XkP-DP-nQc"/>
                         <outlet property="strengthLabel" destination="ja3-du-jQH" id="LNj-QH-h6s"/>
+                        <outlet property="strengthSlider" destination="4Ec-79-cyd" id="3kX-Ua-OxQ"/>
                         <outlet property="transformerNameTextField" destination="z6O-y1-IZb" id="j2B-7v-qXa"/>
                         <outlet property="transformerTeamType" destination="pTX-TT-8yJ" id="nDd-Gy-JLr"/>
                     </connections>

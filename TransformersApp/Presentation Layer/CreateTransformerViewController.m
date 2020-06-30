@@ -98,9 +98,24 @@
 }
 
 -(void) resetToDefaultUIValues {
-    //    name:self.transformerNameTextField.text strength:self.strengthLabel.text intelligence:self.intelligenceLabel.text speed:self.speedLabel.text endurance:self.enduranceLabel.text rank:self.rankLabel.text courage:self.courageLabel.text firepower:self.firepowerLabel.text skill:self.skillLabel.text team:teamValue
     self.transformerNameTextField.text = @"";
-    
+    int defaultSliderValue = 5;
+    self.strengthSlider.value = defaultSliderValue;
+    self.intelligenceSlider.value = defaultSliderValue;
+    self.speedSlider.value = defaultSliderValue;
+    self.enduranceSlider.value = defaultSliderValue;
+    self.rankSlider.value = defaultSliderValue;
+    self.courageSlider.value = defaultSliderValue;
+    self.firepowerSlider.value = defaultSliderValue;
+    self.skillSlider.value = defaultSliderValue;
+    self.strengthLabel.text = [NSString stringWithFormat:@"%d", defaultSliderValue];
+    self.intelligenceLabel.text = [NSString stringWithFormat:@"%d", defaultSliderValue];
+    self.speedLabel.text = [NSString stringWithFormat:@"%d", defaultSliderValue];
+    self.enduranceLabel.text = [NSString stringWithFormat:@"%d", defaultSliderValue];
+    self.rankLabel.text = [NSString stringWithFormat:@"%d", defaultSliderValue];
+    self.courageLabel.text = [NSString stringWithFormat:@"%d", defaultSliderValue];
+    self.firepowerLabel.text = [NSString stringWithFormat:@"%d", defaultSliderValue];
+    self.skillLabel.text = [NSString stringWithFormat:@"%d", defaultSliderValue];
 }
 
 

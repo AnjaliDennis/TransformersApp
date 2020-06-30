@@ -25,6 +25,14 @@ NS_ASSUME_NONNULL_BEGIN
 @property (weak, nonatomic) IBOutlet UILabel *firepowerLabel;
 @property (weak, nonatomic) IBOutlet UILabel *skillLabel;
 @property (weak, nonatomic) IBOutlet UIButton *createTransformerButton;
+@property (weak, nonatomic) IBOutlet UISlider *strengthSlider;
+@property (weak, nonatomic) IBOutlet UISlider *intelligenceSlider;
+@property (weak, nonatomic) IBOutlet UISlider *speedSlider;
+@property (weak, nonatomic) IBOutlet UISlider *enduranceSlider;
+@property (weak, nonatomic) IBOutlet UISlider *rankSlider;
+@property (weak, nonatomic) IBOutlet UISlider *courageSlider;
+@property (weak, nonatomic) IBOutlet UISlider *firepowerSlider;
+@property (weak, nonatomic) IBOutlet UISlider *skillSlider;
 
 @property (strong, nonatomic) TransformerDataModel *dataModel;
 @property (strong, nonatomic) TransformerDataModel *requestBodyDataModel;
