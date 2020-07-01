@@ -212,6 +212,22 @@
         updatedDecepticonDataModel.battleOutcome = CONSTANT_DESTROYED_STRING;
         [self.dataSource.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:updatedDecepticonDataModel];
     }
+    if (self.dataSource.sortedAutobotsDataModelArray.count == battleCount && self.dataSource.sortedDecepticonsDataModelArray.count>battleCount) {
+        for (int i=battleCount;i<self.dataSource.sortedDecepticonsDataModelArray.count;i++) {
+            TransformerDataModel *updatedDecepticonDataModel = [[TransformerDataModel alloc] init];
+            updatedDecepticonDataModel = [self.dataSource.sortedDecepticonsDataModelArray objectAtIndex:i];
+            updatedDecepticonDataModel.battleOutcome = CONSTANT_DESTROYED_STRING;
+            [self.dataSource.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:updatedDecepticonDataModel];
+        }
+    }
+    else if (self.dataSource.sortedDecepticonsDataModelArray.count == battleCount && self.dataSource.sortedAutobotsDataModelArray.count>battleCount){
+        for (int i=battleCount;i<self.dataSource.sortedAutobotsDataModelArray.count;i++) {
+                   TransformerDataModel *updatedAutobotDataModel = [[TransformerDataModel alloc] init];
+                   updatedAutobotDataModel = [self.dataSource.sortedAutobotsDataModelArray objectAtIndex:i];
+                   updatedAutobotDataModel.battleOutcome = CONSTANT_DESTROYED_STRING;
+                   [self.dataSource.sortedAutobotsDataModelArray replaceObjectAtIndex:i withObject:updatedAutobotDataModel];
+               }
+    }
 }
 
 @end
