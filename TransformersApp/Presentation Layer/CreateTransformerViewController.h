@@ -36,6 +36,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (strong, nonatomic) TransformerDataModel *createdTransformerDataModel;
 @property (strong, nonatomic) TransformerDataModel *requestBodyDataModel;
+-(TransformerDataModel *) parseAndStoreCreatedTransformer: (NSDictionary *) dataDictionary;
 
 
 @end

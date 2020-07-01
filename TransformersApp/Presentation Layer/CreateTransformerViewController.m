@@ -66,8 +66,9 @@
         TransformerNetworkAPI *transformerNetworkAPI = [[TransformerNetworkAPI alloc] init];
         [transformerNetworkAPI createTransformer:self.requestBodyDataModel :^(NSDictionary * _Nonnull dataDictionary, NSError * _Nonnull error) {
             if (!error) {
-                
-                [self parseAndStoreCreatedTransformer:dataDictionary];
+                self.createdTransformerDataModel = [[TransformerDataModel alloc] init];
+                self.createdTransformerDataModel = [self parseAndStoreCreatedTransformer:dataDictionary];
+                //[self parseAndStoreCreatedTransformer:dataDictionary];
                 [self resetToDefaultUIValues];
                 
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:CONSTANT_ALERT_SUCCESS_TITLE_STRING message:CONSTANT_ALERT_CREATE_SUCCESS_MESSAGE_STRING preferredStyle:UIAlertControllerStyleAlert];
@@ -85,8 +86,7 @@
     }
 }
 
--(void) parseAndStoreCreatedTransformer: (NSDictionary *) dataDictionary {
-    self.createdTransformerDataModel = [[TransformerDataModel alloc] init];
+-(TransformerDataModel *) parseAndStoreCreatedTransformer: (NSDictionary *) dataDictionary {
     self.createdTransformerDataModel.transformerId = [dataDictionary valueForKey:CONSTANT_ID_KEY_STRING];
     self.createdTransformerDataModel.name = [dataDictionary valueForKey:CONSTANT_NAME_KEY_STRING];
     self.createdTransformerDataModel.strength = [dataDictionary valueForKey:CONSTANT_STRENGTH_KEY_STRING];
@@ -98,6 +98,8 @@
     self.createdTransformerDataModel.firepower = [dataDictionary valueForKey:CONSTANT_FIREPOWER_KEY_STRING];
     self.createdTransformerDataModel.skill = [dataDictionary valueForKey:CONSTANT_SKILL_KEY_STRING];
     self.createdTransformerDataModel.team = [dataDictionary valueForKey:CONSTANT_TEAM_KEY_STRING];
+    self.createdTransformerDataModel.team_icon = [dataDictionary valueForKey:CONSTANT_TEAM_ICON_KEY_STRING];
+    return self.createdTransformerDataModel;
 }
 
 -(void) resetToDefaultUIValues {

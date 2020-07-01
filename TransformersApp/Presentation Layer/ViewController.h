@@ -19,7 +19,8 @@
 @property (strong, nonatomic) NSMutableArray <TransformerDataModel *> *transformerDataModelArray;
 @property (strong, nonatomic) NSIndexPath *currentIndexPath;
 @property (nonatomic) BOOL isCellEditing;
-
+-(void) parseData: (NSDictionary *) dataDictionary;
+-(TransformerDataModel *) parseUpdatedData:(NSDictionary *) dataDictionary;
 
 @end
 

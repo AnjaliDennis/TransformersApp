@@ -21,6 +21,10 @@
 		4E7C899124A938A400D1EAC1 /* BattlefieldTransformerTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7C899024A938A400D1EAC1 /* BattlefieldTransformerTableViewCell.m */; };
 		4E7C899424A93A1700D1EAC1 /* BattlefieldTransformerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7C899324A93A1700D1EAC1 /* BattlefieldTransformerViewController.m */; };
 		4E7C899A24AAA5CD00D1EAC1 /* TransformerConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7C899924AAA5CD00D1EAC1 /* TransformerConstants.m */; };
+		4E7C899C24AB884A00D1EAC1 /* CreateTransformerViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7C899B24AB884A00D1EAC1 /* CreateTransformerViewControllerTests.m */; };
+		4E7C89A224ABBAFA00D1EAC1 /* TransformerNetworkAPITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7C89A124ABBAFA00D1EAC1 /* TransformerNetworkAPITests.m */; };
+		4E7C89A424ABC63D00D1EAC1 /* ViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7C89A324ABC63D00D1EAC1 /* ViewControllerTests.m */; };
+		4E7C89A624AC9AC500D1EAC1 /* BattlefieldTransformerViewControllerTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 4E7C89A524AC9AC500D1EAC1 /* BattlefieldTransformerViewControllerTests.m */; };
 		4EBD15F624A4F6E200E88EEF /* TransformerNetworkAPI.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD15F524A4F6E200E88EEF /* TransformerNetworkAPI.m */; };
 		4EBD15F924A55A6B00E88EEF /* CreateTransformerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD15F824A55A6B00E88EEF /* CreateTransformerViewController.m */; };
 		4EBD15FC24A571D700E88EEF /* TransformerDataModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 4EBD15FB24A571D700E88EEF /* TransformerDataModel.m */; };
@@ -71,6 +75,10 @@
 		4E7C899324A93A1700D1EAC1 /* BattlefieldTransformerViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BattlefieldTransformerViewController.m; sourceTree = "<group>"; };
 		4E7C899824AAA5CD00D1EAC1 /* TransformerConstants.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransformerConstants.h; sourceTree = "<group>"; };
 		4E7C899924AAA5CD00D1EAC1 /* TransformerConstants.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransformerConstants.m; sourceTree = "<group>"; };
+		4E7C899B24AB884A00D1EAC1 /* CreateTransformerViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CreateTransformerViewControllerTests.m; sourceTree = "<group>"; };
+		4E7C89A124ABBAFA00D1EAC1 /* TransformerNetworkAPITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransformerNetworkAPITests.m; sourceTree = "<group>"; };
+		4E7C89A324ABC63D00D1EAC1 /* ViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewControllerTests.m; sourceTree = "<group>"; };
+		4E7C89A524AC9AC500D1EAC1 /* BattlefieldTransformerViewControllerTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BattlefieldTransformerViewControllerTests.m; sourceTree = "<group>"; };
 		4EBD15F424A4F6E200E88EEF /* TransformerNetworkAPI.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TransformerNetworkAPI.h; sourceTree = "<group>"; };
 		4EBD15F524A4F6E200E88EEF /* TransformerNetworkAPI.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TransformerNetworkAPI.m; sourceTree = "<group>"; };
 		4EBD15F724A55A6B00E88EEF /* CreateTransformerViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CreateTransformerViewController.h; sourceTree = "<group>"; };
@@ -134,8 +142,6 @@
 				4E44553724A3E9C800FDC6CC /* AppDelegate.m */,
 				4E44553924A3E9C800FDC6CC /* SceneDelegate.h */,
 				4E44553A24A3E9C800FDC6CC /* SceneDelegate.m */,
-				4E44553C24A3E9C800FDC6CC /* ViewController.h */,
-				4E44553D24A3E9C800FDC6CC /* ViewController.m */,
 				4E44553F24A3E9C800FDC6CC /* Main.storyboard */,
 				4E44554524A3E9CA00FDC6CC /* Assets.xcassets */,
 				4E44554724A3E9CA00FDC6CC /* LaunchScreen.storyboard */,
@@ -151,6 +157,10 @@
 			children = (
 				4E44555524A3E9CA00FDC6CC /* TransformersAppTests.m */,
 				4E44555724A3E9CA00FDC6CC /* Info.plist */,
+				4E7C899B24AB884A00D1EAC1 /* CreateTransformerViewControllerTests.m */,
+				4E7C89A124ABBAFA00D1EAC1 /* TransformerNetworkAPITests.m */,
+				4E7C89A324ABC63D00D1EAC1 /* ViewControllerTests.m */,
+				4E7C89A524AC9AC500D1EAC1 /* BattlefieldTransformerViewControllerTests.m */,
 			);
 			path = TransformersAppTests;
 			sourceTree = "<group>";
@@ -195,6 +205,8 @@
 				4E7C899024A938A400D1EAC1 /* BattlefieldTransformerTableViewCell.m */,
 				4E7C899224A93A1700D1EAC1 /* BattlefieldTransformerViewController.h */,
 				4E7C899324A93A1700D1EAC1 /* BattlefieldTransformerViewController.m */,
+				4E44553C24A3E9C800FDC6CC /* ViewController.h */,
+				4E44553D24A3E9C800FDC6CC /* ViewController.m */,
 			);
 			path = "Presentation Layer";
 			sourceTree = "<group>";
@@ -348,6 +360,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4E7C899C24AB884A00D1EAC1 /* CreateTransformerViewControllerTests.m in Sources */,
+				4E7C89A224ABBAFA00D1EAC1 /* TransformerNetworkAPITests.m in Sources */,
+				4E7C89A424ABC63D00D1EAC1 /* ViewControllerTests.m in Sources */,
+				4E7C89A624AC9AC500D1EAC1 /* BattlefieldTransformerViewControllerTests.m in Sources */,
 				4E44555624A3E9CA00FDC6CC /* TransformersAppTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

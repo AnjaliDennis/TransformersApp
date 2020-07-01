@@ -24,6 +24,7 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic) BOOL isBattleComplete;
 @property (nonatomic) BOOL isGameOVerByAnnihilation;
 @property (weak, nonatomic) IBOutlet UITableView *transformerBattleTableView;
+-(void) sortTransformers;
 
 @end
 

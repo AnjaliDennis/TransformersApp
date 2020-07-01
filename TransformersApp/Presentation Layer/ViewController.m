@@ -120,7 +120,7 @@
     }
 }
 
--(void) parseData : (NSDictionary *) dataDictionary {
+-(void) parseData: (NSDictionary *) dataDictionary {
     NSArray *responseDataArray = [dataDictionary objectForKey:CONSTANT_TRANSFORMERS_KEY_STRING];
     [self.transformerDataModelArray removeAllObjects];
     for (NSDictionary *itemDictionary in responseDataArray) {
@@ -159,7 +159,7 @@
     transformerDataModel.skill = [dataDictionary valueForKey:CONSTANT_SKILL_KEY_STRING];
     transformerDataModel.team = ([[dataDictionary valueForKey:CONSTANT_TEAM_KEY_STRING] isEqualToString:CONSTANT_TEAM_AUTOBOT_STRING]) ? CONSTANT_AUTOBOT_STRING : CONSTANT_DECEPTICON_STRING;
     transformerDataModel.team_icon = [dataDictionary valueForKey:CONSTANT_TEAM_ICON_KEY_STRING];
-    //calculate overall rating->(Strength + dataDictionary + Speed + Endurance + Firepower).
+    //calculate overall rating->(Strength + intelligence + Speed + Endurance + Firepower).
     int overallRating = transformerDataModel.strength.intValue + transformerDataModel.intelligence.intValue + transformerDataModel.speed.intValue + transformerDataModel.endurance.intValue + transformerDataModel.firepower.intValue;
     transformerDataModel.rating =  [NSString stringWithFormat:@"%d", overallRating];
     return transformerDataModel;
