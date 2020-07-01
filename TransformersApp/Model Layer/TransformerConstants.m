@@ -62,6 +62,7 @@ NSString * const CONSTANT_ALERT_UPDATE_SUCCESS_MESSAGE_STRING = @"Transformer ha
 NSString * const CONSTANT_ALERT_UPDATE_FAILURE_MESSAGE_STRING = @"Failed to update Transformer. Please Try Again";
 NSString * const CONSTANT_SAVE_BUTTON = @"Save";
 NSString * const CONSTANT_EDIT_BUTTON_OK = @"Edit";
+NSString * const CONSTANT_REFRESH = @"refreshRequired";
 
 NSString * const CONSTANT_URL_TOKEN_OK = @"https://transformers-api.firebaseapp.com/allspark";
 NSString * const CONSTANT_URL = @"https://transformers-api.firebaseapp.com/transformers";

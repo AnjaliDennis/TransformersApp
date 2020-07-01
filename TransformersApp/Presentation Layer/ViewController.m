@@ -27,6 +27,15 @@
     }];
 }
 
+-(void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    if([[NSUserDefaults standardUserDefaults] boolForKey:CONSTANT_REFRESH]) {
+        [[NSUserDefaults standardUserDefaults] setBool:NO forKey:CONSTANT_REFRESH];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        [self refreshTransformerList:nil];
+    }
+}
+
 - (nonnull __kindof UICollectionViewCell *)collectionView:(nonnull UICollectionView *)collectionView cellForItemAtIndexPath:(nonnull NSIndexPath *)indexPath { 
     static NSString *cellIdentifier = @"TransformerCollectionViewCellReuseIdentifier";
     TransformerCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:cellIdentifier forIndexPath:indexPath];

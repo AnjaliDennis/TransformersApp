@@ -71,6 +71,8 @@
                 //[self parseAndStoreCreatedTransformer:dataDictionary];
                 [self resetToDefaultUIValues];
                 
+                [[NSUserDefaults standardUserDefaults] setBool:YES forKey:CONSTANT_REFRESH];
+                [[NSUserDefaults standardUserDefaults] synchronize];
                 UIAlertController *alert = [UIAlertController alertControllerWithTitle:CONSTANT_ALERT_SUCCESS_TITLE_STRING message:CONSTANT_ALERT_CREATE_SUCCESS_MESSAGE_STRING preferredStyle:UIAlertControllerStyleAlert];
                 UIAlertAction *defaultAction = [UIAlertAction actionWithTitle:CONSTANT_ALERT_BUTTON_OK style:UIAlertActionStyleDefault handler:nil];
                 [alert addAction:defaultAction];
