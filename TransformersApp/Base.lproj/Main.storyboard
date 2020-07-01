@@ -16,7 +16,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="singleLineEtched" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J03-dt-b8L">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="J03-dt-b8L">
                                 <rect key="frame" x="10" y="144" width="355" height="503"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <color key="separatorColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -242,7 +242,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="7HT-9L-0QE">
-                                <rect key="frame" x="73.5" y="45" width="228" height="34"/>
+                                <rect key="frame" x="73.5" y="55" width="228" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ot1-14-0h5" userLabel="editButton">
                                         <rect key="frame" x="0.0" y="0.0" width="63" height="34"/>
@@ -277,7 +277,7 @@
                                 </subviews>
                             </stackView>
                             <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsVerticalScrollIndicator="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="nOp-uw-S4T">
-                                <rect key="frame" x="5" y="84" width="365" height="573"/>
+                                <rect key="frame" x="5" y="94" width="365" height="563"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Rjd-5J-szH">
                                     <size key="itemSize" width="364" height="508"/>
@@ -287,7 +287,7 @@
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="TransformerCollectionViewCellReuseIdentifier" id="YZW-Ce-YQx" customClass="TransformerCollectionViewCell">
-                                        <rect key="frame" x="0.0" y="32.5" width="364" height="508"/>
+                                        <rect key="frame" x="0.0" y="27.5" width="364" height="508"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="3gR-Er-rRm">
                                             <rect key="frame" x="0.0" y="0.0" width="364" height="508"/>
@@ -532,7 +532,8 @@
                             <constraint firstItem="nOp-uw-S4T" firstAttribute="top" secondItem="7HT-9L-0QE" secondAttribute="bottom" constant="5" id="8hu-Pb-wnF"/>
                             <constraint firstItem="nOp-uw-S4T" firstAttribute="leading" secondItem="6LW-5p-SkJ" secondAttribute="leading" constant="5" id="BDI-1D-IVB"/>
                             <constraint firstItem="7HT-9L-0QE" firstAttribute="centerX" secondItem="6LW-5p-SkJ" secondAttribute="centerX" id="UG1-KX-JFk"/>
-                            <constraint firstItem="nOp-uw-S4T" firstAttribute="top" secondItem="6LW-5p-SkJ" secondAttribute="top" constant="40" id="fbs-BK-Zyc"/>
+                            <constraint firstItem="nOp-uw-S4T" firstAttribute="top" secondItem="6LW-5p-SkJ" secondAttribute="top" constant="50" id="fbs-BK-Zyc"/>
+                            <constraint firstItem="7HT-9L-0QE" firstAttribute="top" relation="greaterThanOrEqual" secondItem="6LW-5p-SkJ" secondAttribute="top" constant="10" id="ik2-G0-Dz1"/>
                             <constraint firstItem="6LW-5p-SkJ" firstAttribute="trailing" secondItem="nOp-uw-S4T" secondAttribute="trailing" constant="5" id="jcV-Gt-bdN"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6LW-5p-SkJ"/>
