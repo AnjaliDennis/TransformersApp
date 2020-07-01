@@ -7,23 +7,22 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "BattlefieldTransformerTableViewCell.h"
 #import "TransformerDataModel.h"
 #import "TransformerConstants.h"
+#import "BattlefieldTransformerTableViewDatasourceAndDelegate.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface BattlefieldTransformerViewController : UIViewController <UITableViewDataSource,UITableViewDelegate>
+@interface BattlefieldTransformerViewController : UIViewController 
 @property (weak, nonatomic) IBOutlet UIButton *startBattleButton;
 @property (weak, nonatomic) IBOutlet UILabel *battlefieldBannerLabel;
 
 @property (strong, nonatomic) NSMutableArray <TransformerDataModel *> *transformerDataModelArray;
-@property (strong, nonatomic) NSMutableArray <TransformerDataModel *> *sortedAutobotsDataModelArray;
-@property (strong, nonatomic) NSMutableArray <TransformerDataModel *> *sortedDecepticonsDataModelArray;
 @property (nonatomic) BOOL isSorted;
 @property (nonatomic) BOOL isBattleComplete;
 @property (nonatomic) BOOL isGameOVerByAnnihilation;
 @property (weak, nonatomic) IBOutlet UITableView *transformerBattleTableView;
+@property (strong, nonatomic) BattlefieldTransformerTableViewDatasourceAndDelegate *dataSource;
 -(void) sortTransformers;
 
 @end
