@@ -42,8 +42,8 @@
     TransformerDataModel *transformerDataModel = [[TransformerDataModel alloc] init];
     transformerDataModel = [self.transformerDataModelArray objectAtIndex:indexPath.row];
     cell.nameTextField.text = transformerDataModel.name;
+    cell.nameTextField.delegate = self;
     cell.teamValueSegmentedControl.selectedSegmentIndex = ([transformerDataModel.team isEqualToString:CONSTANT_AUTOBOT_STRING]) ? 0 : 1;
-    
     
     cell.strengthSlider.value = transformerDataModel.strength.intValue;
     cell.strengthLabel.text = [CONSTANT_STRENGTH_STRING stringByAppendingString:transformerDataModel.strength];
@@ -262,7 +262,6 @@
         
         updatedTransformerDataModel.transformerId = uneditedTransformerDataModel.transformerId;
         updatedTransformerDataModel.name = selectedCell.nameTextField.text;
-        
         updatedTransformerDataModel.strength = [NSString stringWithFormat:@"%d",(int)selectedCell.strengthSlider.value];
         updatedTransformerDataModel.intelligence = [NSString stringWithFormat:@"%d",(int)selectedCell.intelligenceSlider.value];
         updatedTransformerDataModel.speed = [NSString stringWithFormat:@"%d",(int)selectedCell.speedSlider.value];
@@ -299,6 +298,9 @@
         }];
     }
 }
-
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [textField resignFirstResponder];
+    return YES;
+}
 
 @end

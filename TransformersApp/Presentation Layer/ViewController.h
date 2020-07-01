@@ -13,7 +13,7 @@
 #import "BattlefieldTransformerViewController.h"
 #import "TransformerConstants.h"
 
-@interface ViewController : UIViewController <UICollectionViewDataSource>
+@interface ViewController : UIViewController <UICollectionViewDataSource,UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UICollectionView *autobotCollectionView;
 
 @property (strong, nonatomic) NSMutableArray <TransformerDataModel *> *transformerDataModelArray;
