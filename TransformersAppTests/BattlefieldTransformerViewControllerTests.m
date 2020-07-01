@@ -35,27 +35,28 @@
 }
 
 -(void) testSortTransformers {
-    self.battlefieldTransformerViewController.transformerDataModelArray = [[NSMutableArray alloc] init];
+    self.battlefieldTransformerViewController.dataSource = [[BattlefieldTransformerTableViewDatasourceAndDelegate alloc] init];
+    self.battlefieldTransformerViewController.dataSource.transformerDataModelArray = [[NSMutableArray alloc] init];
     TransformerDataModel *transformerDataModel1 = [[TransformerDataModel alloc] initWithTransformerId:@"-LLbrUN3dQkeejt9vTZc" name:@"Transformer1" strength:@"10" intelligence:@"10" speed:@"4" endurance:@"8" rank:@"5" courage:@"9" firepower:@"10" skill:@"9" team:@"Decepticon" teamIcon:@"https://tfwiki.net/mediawiki/images2/archive/8/8d/201104 10191659%21Symbol_decept_reg.png"];
     TransformerDataModel *transformerDataModel2 = [[TransformerDataModel alloc] initWithTransformerId:@"-LLbrUN3dQkeejt9vTZc" name:@"Transformer2" strength:@"10" intelligence:@"10" speed:@"4" endurance:@"8" rank:@"10" courage:@"9" firepower:@"10" skill:@"9" team:@"Decepticon" teamIcon:@"https://tfwiki.net/mediawiki/images2/archive/8/8d/201104 10191659%21Symbol_decept_reg.png"];
     TransformerDataModel *transformerDataModel3 = [[TransformerDataModel alloc] initWithTransformerId:@"-LLbrUN3dQkeejt9vTZc" name:@"Transformer3" strength:@"10" intelligence:@"10" speed:@"4" endurance:@"8" rank:@"7" courage:@"9" firepower:@"10" skill:@"9" team:@"Autobot" teamIcon:@"https://tfwiki.net/mediawiki/images2/archive/8/8d/201104 10191659%21Symbol_decept_reg.png"];
     TransformerDataModel *transformerDataModel4 = [[TransformerDataModel alloc] initWithTransformerId:@"-LLbrUN3dQkeejt9vTZc" name:@"Transformer4" strength:@"10" intelligence:@"10" speed:@"4" endurance:@"8" rank:@"7" courage:@"9" firepower:@"10" skill:@"9" team:@"Autobot" teamIcon:@"https://tfwiki.net/mediawiki/images2/archive/8/8d/201104 10191659%21Symbol_decept_reg.png"];
-    [self.battlefieldTransformerViewController.transformerDataModelArray addObject:transformerDataModel1];
-    [self.battlefieldTransformerViewController.transformerDataModelArray addObject:transformerDataModel2];
-    [self.battlefieldTransformerViewController.transformerDataModelArray addObject:transformerDataModel3];
-    [self.battlefieldTransformerViewController.transformerDataModelArray addObject:transformerDataModel4];
+    [self.battlefieldTransformerViewController.dataSource.transformerDataModelArray addObject:transformerDataModel1];
+    [self.battlefieldTransformerViewController.dataSource.transformerDataModelArray addObject:transformerDataModel2];
+    [self.battlefieldTransformerViewController.dataSource.transformerDataModelArray addObject:transformerDataModel3];
+    [self.battlefieldTransformerViewController.dataSource.transformerDataModelArray addObject:transformerDataModel4];
     
-    self.battlefieldTransformerViewController.sortedAutobotsDataModelArray = [[NSMutableArray alloc] init];
-    self.battlefieldTransformerViewController.sortedDecepticonsDataModelArray = [[NSMutableArray alloc] init];
+    self.battlefieldTransformerViewController.dataSource.sortedAutobotsDataModelArray = [[NSMutableArray alloc] init];
+    self.battlefieldTransformerViewController.dataSource.sortedDecepticonsDataModelArray = [[NSMutableArray alloc] init];
     
     [self.battlefieldTransformerViewController sortTransformers];
-    XCTAssertEqual(self.battlefieldTransformerViewController.transformerDataModelArray.count,4,@"Count value of main array is incorrect");
-     XCTAssertEqual(self.battlefieldTransformerViewController.sortedAutobotsDataModelArray.count,2,@"Count value of sorted autobot array is incorrect");
-     XCTAssertEqual(self.battlefieldTransformerViewController.sortedDecepticonsDataModelArray.count,2,@"Count value of sorted decepticon array is incorrect");
-    XCTAssertEqual([self.battlefieldTransformerViewController.sortedAutobotsDataModelArray firstObject].rank.intValue,7,@"Rank values are not equal");
-    XCTAssertEqual([self.battlefieldTransformerViewController.sortedAutobotsDataModelArray lastObject].rank.intValue,7,@"Rank values are not equal");
-    XCTAssertEqual([self.battlefieldTransformerViewController.sortedDecepticonsDataModelArray firstObject].rank.intValue,10,@"Rank values are not equal");
-    XCTAssertEqual([self.battlefieldTransformerViewController.sortedDecepticonsDataModelArray lastObject].rank.intValue,5,@"Rank values are not equal");
+    XCTAssertEqual(self.battlefieldTransformerViewController.dataSource.transformerDataModelArray.count,4,@"Count value of main array is incorrect");
+     XCTAssertEqual(self.battlefieldTransformerViewController.dataSource.sortedAutobotsDataModelArray.count,2,@"Count value of sorted autobot array is incorrect");
+     XCTAssertEqual(self.battlefieldTransformerViewController.dataSource.sortedDecepticonsDataModelArray.count,2,@"Count value of sorted decepticon array is incorrect");
+    XCTAssertEqual([self.battlefieldTransformerViewController.dataSource.sortedAutobotsDataModelArray firstObject].rank.intValue,7,@"Rank values are not equal");
+    XCTAssertEqual([self.battlefieldTransformerViewController.dataSource.sortedAutobotsDataModelArray lastObject].rank.intValue,7,@"Rank values are not equal");
+    XCTAssertEqual([self.battlefieldTransformerViewController.dataSource.sortedDecepticonsDataModelArray firstObject].rank.intValue,10,@"Rank values are not equal");
+    XCTAssertEqual([self.battlefieldTransformerViewController.dataSource.sortedDecepticonsDataModelArray lastObject].rank.intValue,5,@"Rank values are not equal");
 }
 
 

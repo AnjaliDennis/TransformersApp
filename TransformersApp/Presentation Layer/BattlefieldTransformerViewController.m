@@ -25,10 +25,11 @@
     self.dataSource.isBattleComplete = self.isBattleComplete;
     self.dataSource.transformerDataModelArray = self.transformerDataModelArray;
     if (self.transformerDataModelArray.count == 0) {
-        self.startBattleButton.hidden = YES;
+        self.startBattleButton.userInteractionEnabled = NO;
     }
     else {
         self.startBattleButton.hidden = self.isBattleComplete;
+        self.startBattleButton.userInteractionEnabled = YES;
     }
     [self sortTransformers];
 }

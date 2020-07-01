@@ -47,7 +47,7 @@
     XCTAssertTrue([app.staticTexts[@"Start Battle to determine the Champion"] exists],@"Banner is missing");
     XCTAssertTrue([app.staticTexts[@"AUTOBOTS"] exists],@"Team name label header is missing");
     XCTAssertTrue([app.staticTexts[@"DECEPTICONS"] exists],@"Team name header label is missing");
-    XCTAssertTrue([app.buttons[@"Start Battle"] exists],@"Create button is missing");
+    XCTAssertTrue([app.buttons[@"Start Battle"] exists],@"Start Battle button is missing");
 }
 
 - (void)testLaunchPerformance {
