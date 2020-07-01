@@ -242,12 +242,12 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="7HT-9L-0QE">
-                                <rect key="frame" x="54" y="45" width="267.5" height="34"/>
+                                <rect key="frame" x="73.5" y="45" width="228" height="34"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ot1-14-0h5" userLabel="editButton">
-                                        <rect key="frame" x="0.0" y="0.0" width="102.5" height="34"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="63" height="34"/>
                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title=" Refresh" image="editIcon">
+                                        <state key="normal" title="Refresh">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
@@ -255,7 +255,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SVQ-PG-8qu">
-                                        <rect key="frame" x="109.5" y="0.0" width="81" height="34"/>
+                                        <rect key="frame" x="70" y="0.0" width="81" height="34"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Create New">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -265,7 +265,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hzt-z9-g2W">
-                                        <rect key="frame" x="197.5" y="0.0" width="70" height="34"/>
+                                        <rect key="frame" x="158" y="0.0" width="70" height="34"/>
                                         <color key="backgroundColor" white="0.66666666669999997" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <state key="normal" title="Battlefield">
                                             <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -916,7 +916,4 @@
             <point key="canvasLocation" x="-402.39999999999998" y="-636.4317841079461"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="editIcon" width="35.5" height="34"/>
-    </resources>
 </document>

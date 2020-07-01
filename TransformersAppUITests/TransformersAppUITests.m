@@ -21,19 +21,33 @@
     self.continueAfterFailure = NO;
 
     // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
+    XCUIApplication *app = [[XCUIApplication alloc] init];
+    [app launch];
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
 }
 
-- (void)testExample {
-    // UI tests must launch the application that they test.
+-(void) testScreens {
     XCUIApplication *app = [[XCUIApplication alloc] init];
-    [app launch];
-
-    // Use recording to get started writing UI tests.
-    // Use XCTAssert and related functions to verify your tests produce the correct results.
+    XCTAssertTrue([app.buttons[@"Refresh"] exists],@"Refresh button is missing");
+    XCTAssertTrue([app.buttons[@"Create New"] exists],@"Create New button is missing");
+    XCTAssertTrue([app.buttons[@"Battlefield"] exists],@"Battlefield button is missing");
+    
+    [[[XCUIApplication alloc] init].buttons[@"Create New"] tap];
+    XCTAssertTrue([app.staticTexts[@"NAME:"] exists],@"Name label is missing");
+    XCTAssertTrue([app.staticTexts[@"TEAM:"] exists],@"Team label is missing");
+    XCTAssertTrue([app.buttons[@"Autobot"] exists],@"Segment control is missing");
+    XCTAssertTrue([app.buttons[@"Decepticon"] exists],@"Segment control is missing");
+    XCTAssertTrue([app.buttons[@"Create"] exists],@"Create button is missing");
+    
+    [[[XCUIApplication alloc] init].navigationBars[@"Create Transformer"].buttons[@"Back"] tap];
+    [app.buttons[@"Battlefield"] tap];
+    XCTAssertTrue([app.staticTexts[@"Start Battle to determine the Champion"] exists],@"Banner is missing");
+    XCTAssertTrue([app.staticTexts[@"AUTOBOTS"] exists],@"Team name label header is missing");
+    XCTAssertTrue([app.staticTexts[@"DECEPTICONS"] exists],@"Team name header label is missing");
+    XCTAssertTrue([app.buttons[@"Start Battle"] exists],@"Create button is missing");
 }
 
 - (void)testLaunchPerformance {
