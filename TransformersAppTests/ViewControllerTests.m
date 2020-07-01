@@ -9,6 +9,7 @@
 #import <XCTest/XCTest.h>
 #import "ViewController.h"
 #import "TransformerDataModel.h"
+#import "TransformerCollectionViewCell.h"
 
 @interface ViewControllerTests : XCTestCase
 @property (nonatomic) ViewController *viewController;
@@ -26,11 +27,12 @@
     //[[[XCUIApplication alloc] init] launch];
 
     // In UI tests it’s important to set the initial state - such as interface orientation - required for your tests before they run. The setUp method is a good place to do this.
-    self.viewController = [[ViewController alloc] init];
+//    self.viewController = [[ViewController alloc] init];
 }
 
 - (void)tearDown {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
+    self.viewController = nil;
 }
 
 - (void)testExample {
@@ -39,6 +41,7 @@
 }
 
 -(void) testParseData {
+    self.viewController = [[ViewController alloc] init];
     NSDictionary *data = @{@"transformers":@[
     @{@"id" : @"-LLbrUN3dQkeejt9vTZc", @"name" : @"Megatron", @"strength" : @"10", @"intelligence" : @"10", @"speed" : @"4", @"endurance" : @"8", @"rank" : @"10", @"courage" : @"9", @"firepower" : @"10", @"skill" : @"9", @"team" : @"D", @"team_icon" : @"https://tfwiki.net/mediawiki/images2/archive/8/8d/201104 10191659%21Symbol_decept_reg.png"}
     ]};
@@ -63,6 +66,7 @@
 }
 
 -(void) testParseUpdatedData {
+    self.viewController = [[ViewController alloc] init];
      NSDictionary *jsonResponseDict= @{ @"id" : @"-LLbrUN3dQkeejt9vTZc", @"name" : @"Megatron123", @"strength" : @"10", @"intelligence" : @"10", @"speed" : @"5", @"endurance" : @"8", @"rank" : @"10", @"courage" : @"9", @"firepower" : @"10", @"skill" : @"9", @"team" : @"D", @"team_icon" : @"https://tfwiki.net/mediawiki/images2/archive/8/8d/201104 10191659%21Symbol_decept_reg.png",};
     TransformerDataModel *parsedResponseDataModel = [[TransformerDataModel alloc] init];
     parsedResponseDataModel = [self.viewController parseUpdatedData:jsonResponseDict];
@@ -79,6 +83,18 @@
     XCTAssertTrue([parsedResponseDataModel.team isEqualToString:@"Decepticon"],@"String values are not equal");
     XCTAssertTrue([parsedResponseDataModel.team_icon isEqualToString:@"https://tfwiki.net/mediawiki/images2/archive/8/8d/201104 10191659%21Symbol_decept_reg.png"],@"String values are not equal");
     XCTAssertEqual(parsedResponseDataModel.rating.intValue,43,@"Rating values are not equal");
+}
+
+-(void) testviewLoad {
+    UIStoryboard *storyboard = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
+   self.viewController = [storyboard instantiateViewControllerWithIdentifier:@"transformerViewController"];
+    [self.viewController performSelectorOnMainThread:@selector(loadView) withObject:nil waitUntilDone:YES];
+    XCTAssertNotNil(self.viewController.view, @"View not initiated properly");
+    NSArray *subviews = self.viewController.view.subviews;
+       XCTAssertTrue([subviews containsObject:self.viewController.autobotCollectionView], @"View does not have a collection view subview");
+    XCTAssertNotNil(self.viewController.autobotCollectionView, @"CollectionView not initiated");
+    XCTAssertTrue([self.viewController conformsToProtocol:@protocol(UICollectionViewDataSource) ], @"View does not conform");
+     XCTAssertNotNil(self.viewController.autobotCollectionView.dataSource, @"Collction view datasource cannot be nil");
 }
 
 @end

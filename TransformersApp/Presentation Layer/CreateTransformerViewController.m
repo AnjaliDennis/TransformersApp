@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    self.transformerNameTextField.delegate = self;
     // Do any additional setup after loading the view.
 }
 - (IBAction)sliderValueChange:(UISlider *)sender {
@@ -125,15 +126,10 @@
     self.skillLabel.text = [NSString stringWithFormat:@"%d", defaultSliderValue];
 }
 
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.transformerNameTextField resignFirstResponder];
+    return YES;
+}
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
 
 @end

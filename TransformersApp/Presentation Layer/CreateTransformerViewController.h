@@ -13,7 +13,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface CreateTransformerViewController : UIViewController
+@interface CreateTransformerViewController : UIViewController <UITextFieldDelegate>
 @property (weak, nonatomic) IBOutlet UITextField *transformerNameTextField;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *transformerTeamType;
 @property (weak, nonatomic) IBOutlet UILabel *strengthLabel;
