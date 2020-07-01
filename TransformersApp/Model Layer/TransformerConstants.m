@@ -50,6 +50,7 @@ NSString * const CONSTANT_GAMEOVER_STRING = @"Game over by Annihilation";
 NSString * const CONSTANT_BATTLE_AUTOBOTS_STRING = @"Battle is won by AUTOBOTS";
 NSString * const CONSTANT_BATTLE_DECEPTICONS_STRING = @"Battle is won by DECEPTICONS";
 NSString * const CONSTANT_BATTLE_TIE_STRING = @"Battle is a TIE";
+NSString * const CONSTANT_BATTLE_INSUFFICIENT_STRING = @"Battle Indeterminate,Insufficient Transformers";
 NSString * const CONSTANT_ALERT_SUCCESS_TITLE_STRING = @"Success";
 NSString * const CONSTANT_ALERT_FAILURE_TITLE_STRING = @"Failure";
 NSString * const CONSTANT_ALERT_CREATE_SUCCESS_MESSAGE_STRING = @"Transformer has been created successfully";
@@ -64,6 +65,8 @@ NSString * const CONSTANT_EDIT_BUTTON_OK = @"Edit";
 
 NSString * const CONSTANT_URL_TOKEN_OK = @"https://transformers-api.firebaseapp.com/allspark";
 NSString * const CONSTANT_URL = @"https://transformers-api.firebaseapp.com/transformers";
+NSString * const CONSTANT_URL_AUTOBOT_TEAMICON = @"https://tfwiki.net/mediawiki/images2/archive/f/fe/20110410191732%21Symbol_autobot_reg.png";
+NSString * const CONSTANT_URL_DECEPTICON_TEAMICON = @"https://tfwiki.net/mediawiki/images2/archive/8/8d/20110410191659%21Symbol_decept_reg.png";
 
 
 @implementation TransformerConstants

@@ -52,6 +52,7 @@ extern NSString * const CONSTANT_GAMEOVER_STRING;
 extern NSString * const CONSTANT_BATTLE_AUTOBOTS_STRING;
 extern NSString * const CONSTANT_BATTLE_DECEPTICONS_STRING;
 extern NSString * const CONSTANT_BATTLE_TIE_STRING;
+extern NSString * const CONSTANT_BATTLE_INSUFFICIENT_STRING;
 extern NSString * const CONSTANT_ALERT_SUCCESS_TITLE_STRING;
 extern NSString * const CONSTANT_ALERT_FAILURE_TITLE_STRING;
 extern NSString * const CONSTANT_ALERT_CREATE_SUCCESS_MESSAGE_STRING;
@@ -66,6 +67,8 @@ extern NSString * const CONSTANT_EDIT_BUTTON_OK;
 
 extern NSString * const CONSTANT_URL_TOKEN_OK;
 extern NSString * const CONSTANT_URL;
+extern NSString * const CONSTANT_URL_AUTOBOT_TEAMICON;
+extern NSString * const CONSTANT_URL_DECEPTICON_TEAMICON;
 
 @interface TransformerConstants : NSObject
 

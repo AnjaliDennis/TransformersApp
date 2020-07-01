@@ -24,10 +24,6 @@
             __typeof(self) __weak weakSelf = self;
             [weakSelf refreshTransformerList:nil];
         }
-        else {
-            NSLog(@"Error in retreiveing jwt");
-            //show alert
-        }
     }];
 }
 
@@ -102,7 +98,6 @@
     [transformerNetworkAPI getTransformerListWithCompletionHandler:^(NSDictionary * _Nonnull dataDictionary, NSError * _Nonnull error) {
         __typeof(self) __weak weakSelf = self;
         if (!error) {
-            //NSLog(@"DataDict:%@", dataDictionary);
             if ([[dataDictionary objectForKey:CONSTANT_TRANSFORMERS_KEY_STRING] count] != 0){
                 [weakSelf parseData:dataDictionary];
             }

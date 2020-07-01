@@ -13,6 +13,12 @@
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     static NSString *cellIdentifier = @"BattlefieldTransformerTableViewCellReuseIdentifier";
     BattlefieldTransformerTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    NSURL *imageUrlDecepticon = [NSURL URLWithString:CONSTANT_URL_DECEPTICON_TEAMICON];
+    NSData *imageDataDecepticon = [NSData dataWithContentsOfURL:imageUrlDecepticon];
+    UIImage *placeholerImageDecepticon = [UIImage imageWithData: imageDataDecepticon];
+    NSURL *imageUrlAutobot = [NSURL URLWithString:CONSTANT_URL_AUTOBOT_TEAMICON];
+    NSData *imageDataAutobot = [NSData dataWithContentsOfURL:imageUrlAutobot];
+    UIImage *placeholerImageAutobot = [UIImage imageWithData: imageDataAutobot];
 
     if (self.sortedAutobotsDataModelArray.count <= indexPath.row) {
         cell.autobotNameLabel.text = CONSTANT_UNAVAILABLE_STRING;
@@ -20,6 +26,7 @@
         cell.autobotStatsLabel.text = CONSTANT_STATS_UNAVAILABLE_STRING;
         cell.autobotRankLabel.text = CONSTANT_RANK_UNAVAILABLE_STRING;
         cell.autobotResultLabel.text = self.isBattleComplete ? CONSTANT_BATTLE_MISSED_STRING : CONSTANT_COMMENCE_BATTLE_STRING;
+        cell.autobotTeamIcon.image = placeholerImageAutobot;
     }
     else  {
         TransformerDataModel *autobotDataModel = [self.sortedAutobotsDataModelArray objectAtIndex:indexPath.row];
@@ -51,6 +58,7 @@
         cell.decepticonStatsLabel.text = CONSTANT_STATS_UNAVAILABLE_STRING;
         cell.decepticonRankLabel.text = CONSTANT_RANK_UNAVAILABLE_STRING;
         cell.decepticonResultLabel.text = self.isBattleComplete ? CONSTANT_BATTLE_MISSED_STRING : CONSTANT_COMMENCE_BATTLE_STRING;
+        cell.decepticonTeamIcon.image = placeholerImageDecepticon;
     }
     else {
         TransformerDataModel *decepticonDataModel = [self.sortedDecepticonsDataModelArray objectAtIndex:indexPath.row];

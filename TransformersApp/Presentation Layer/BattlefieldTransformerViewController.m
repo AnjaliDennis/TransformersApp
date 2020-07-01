@@ -18,18 +18,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     //cache image for autobot & decepticon team icon and populate
-    //have placeholdeer image if one of the teams is missing
-//    NSURL *imageUrl = [NSURL URLWithString:transformerDataModel.team_icon];
-//    NSData *imageData = [NSData dataWithContentsOfURL:imageUrl];
-//    cell.teamIconImagView.image = [UIImage imageWithData: imageData];
-    
     self.dataSource = [[BattlefieldTransformerTableViewDatasourceAndDelegate alloc] init];
     self.transformerBattleTableView.dataSource = self.dataSource;
     self.transformerBattleTableView.delegate = self.dataSource;
     
     self.dataSource.isBattleComplete = self.isBattleComplete;
     self.dataSource.transformerDataModelArray = self.transformerDataModelArray;
-    self.startBattleButton.hidden = self.isBattleComplete;
+    if (self.transformerDataModelArray.count == 0) {
+        self.startBattleButton.hidden = YES;
+    }
+    else {
+        self.startBattleButton.hidden = self.isBattleComplete;
+    }
     [self sortTransformers];
 }
 
@@ -39,16 +39,6 @@
         [self sortTransformers];
     }
 }
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 -(void) sortTransformers {
     self.dataSource.sortedAutobotsDataModelArray = [[NSMutableArray alloc] init];
@@ -73,7 +63,7 @@
 }
 
 - (IBAction)startTransformerBattle:(id)sender {
-    int totalBattles ;
+    int totalBattles = 0;
     NSString *annihilatorAutobotName = CONSTANT_AUTOBOT_ANNIHILATOR_NAME_STRING;
     NSString *annihilatorDecepticonName = CONSTANT_DECEPTICON_ANNIHILATOR_NAME_STRING;
     if (self.dataSource.sortedAutobotsDataModelArray.count >= self.dataSource.sortedDecepticonsDataModelArray.count) {
@@ -160,19 +150,24 @@
     self.dataSource.isBattleComplete = YES;
     self.startBattleButton.hidden = self.isBattleComplete;
     NSLog(@"a: %d b: %d", battlesWonByAutobots, battleWonByDecepticons);
-    if (self.isGameOVerByAnnihilation) {
-        self.battlefieldBannerLabel.text = CONSTANT_GAMEOVER_STRING;
+    if (totalBattles == 0) {
+        self.battlefieldBannerLabel.text = CONSTANT_BATTLE_INSUFFICIENT_STRING;
     }
     else {
-        if (battlesWonByAutobots == battleWonByDecepticons) {
-            self.battlefieldBannerLabel.text = CONSTANT_BATTLE_TIE_STRING;
+        if (self.isGameOVerByAnnihilation) {
+            self.battlefieldBannerLabel.text = CONSTANT_GAMEOVER_STRING;
         }
         else {
-            if (battlesWonByAutobots > battleWonByDecepticons) {
-                self.battlefieldBannerLabel.text = CONSTANT_BATTLE_AUTOBOTS_STRING;
+            if (battlesWonByAutobots == battleWonByDecepticons) {
+                self.battlefieldBannerLabel.text = CONSTANT_BATTLE_TIE_STRING;
             }
             else {
-                self.battlefieldBannerLabel.text = CONSTANT_BATTLE_DECEPTICONS_STRING;
+                if (battlesWonByAutobots > battleWonByDecepticons) {
+                    self.battlefieldBannerLabel.text = CONSTANT_BATTLE_AUTOBOTS_STRING;
+                }
+                else {
+                    self.battlefieldBannerLabel.text = CONSTANT_BATTLE_DECEPTICONS_STRING;
+                }
             }
         }
     }
@@ -217,7 +212,5 @@
         [self.dataSource.sortedDecepticonsDataModelArray replaceObjectAtIndex:i withObject:updatedDecepticonDataModel];
     }
 }
-
-
 
 @end

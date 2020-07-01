@@ -32,7 +32,6 @@
         }
         else
         {
-            //NSLog(@"Error");
             completionBlock(error);
         }
     }];
@@ -65,7 +64,6 @@
         else {
             if (error == nil) {
                 NSError *error = [NSError errorWithDomain:@"com.transformers.createtransformer" code:httpResponse.statusCode userInfo:@{@"Error reason": @"Unexpected error"}];
-                //NSLog(@"%@",error);
                 completionBlock (nil, error);
             }
             else {
